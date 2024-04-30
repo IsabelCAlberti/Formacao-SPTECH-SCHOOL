@@ -1,0 +1,38 @@
+/* @import url("https://fonts.googleapis.com/css2? family= Roboto+Condensed & family= Roboto+Slab:wght@100;200;400;500;700;800;900 & family= Roboto:wght@300 & display=swap"); */
+
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: Verdana, Poppins, Roboto, Arial;
+}
+
+body{
+overflow-x: hidden;
+display: flex;
+flex-flow: column;
+height: 100vh;
+line-height: 135%;
+background-color: #77a4a6;
+}
+
+/*SCROLL*/
+::-webkit-scrollbar {
+    width: 8px;
+  }  
+  /* tamanho da linha*/
+  
+  ::-webkit-scrollbar-track {
+    background-color: #0F1631;
+  } /* cor de fundo do scrool*/
+  
+   ::-webkit-scrollbar-thumb {
+    background-color: #1F4662;
+    border-radius: 20px;
+  } /* cor da barra de rolagem*/
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+  }
+  
