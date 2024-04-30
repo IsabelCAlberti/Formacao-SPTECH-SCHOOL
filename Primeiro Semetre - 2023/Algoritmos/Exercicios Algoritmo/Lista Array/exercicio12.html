@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 12. Crie um programa o qual: 
+
+a) Pergunte ao usuário o nome de um filho seu 
+
+b) Ao clicar em "Cadastrar", o nome do filho fica cadastrado num lugar que o usuário não vê, 
+porém NÃO permita o cadastro de nomes repetidos. 
+Em caso de tentativa de nome repetido, exiba um alert com a frase
+ "Não pode mais de 1 filho com o mesmo nome!" 
+
+c) Ao clicar em "Atualizar Família", deve aparecer um texto como este abaixo: 
+
+   Você tem X filhos 
+
+   Seu custo mensal será aproximadamente R$Y se colocar eles em escola particular ou R$Z se eles estudarem em escola pública 
+
+Onde X é a quantidade de filhos cadastrados. 
+
+Y é o resultado do seguinte cálculo: quant de filhos x 3000, com 2 casas decimais. 
+
+Z é o resultado do seguinte cálculo: quant de filhos x 1500, com 2 casas decimais.  -->
+
+
+    <label>Nome do Filho: </label><input type="text" id="ipt_nome_filhos" placeholder="Nome do Filho">
+    <button onclick="cadastrarNomeFilho()">Cadastrar</button>
+
+    <button onclick="atualizarFamilia()">Atualizar Familia</button>
+
+    <span id="span_mensagem"></span>
+</body>
+
+</html>
+
+<script>
+
+    var listaNomesFilhos = [];
+
+    function cadastrarNomeFilho() {
+        var nomeFilho = ipt_nome_filhos.value
+        listaNomesFilhos.push(nomeFilho);
+        verificarNomeFilhos()
+    }
+
+    function verificarNomeFilhos() {
+       var nomeFilhoPesquisado = ipt_nome_filhos.value;
+    
+        for (var i = 0; i < listaNomesFilhos.length; i++) {
+            var nomeDaLista = listaNomesFilhos[i];
+
+            if (nomeDaLista == nomeFilhoPesquisado) {
+                alert("Não pode mais de 1 filho com o mesmo nome!" )
+                } else{
+                    atualizarFamilia()
+                }
+        }
+    }
+
+    function atualizarFamilia() {
+                    span_mensagem.innerHTML = ` Você tem ${qtdFilhos} filhos <br> Seu custo mensal será aproximadamente R$Y se colocar eles em escola particular ou R$Z se eles estudarem em escola pública  `
+    }
+    
+</script>

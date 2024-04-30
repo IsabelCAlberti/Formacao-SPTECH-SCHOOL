@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7 (5) - Lista 05</title>
+</head>
+<body>
+    <!-- 5. Na cidade Paulopolis a luz custa R$ 0,85 por kWh. 
+        Criar um programa que: 
+a) Solicite a quantidade de kWh consumida no mês 
+b) Ao clicar em "calcular conta de luz", calcule o valor da conta no mês 
+c) Dê um desconto de 10% somente se a quantidade for menor que 100 kWh 
+d) Exiba um alerta com o valor da conta a ser paga  -->
+
+Quantidade de KWH consumida no mês:
+<input id="ipt_kwhMes">
+
+<button onclick="calcularContaLuz()">Calcular Conta de Luz</button>
+
+</body>
+</html>
+<script>
+    function calcularContaLuz(){
+        var kwhMes = Number(ipt_kwhMes.value);
+        var contaMensal = kwhMes*0.85;
+        if(kwhMes < 100){
+            contaMensal = contaMensal - (contaMensal *0.1);
+            console.log("contaMensal com desconto", contaMensal)
+        }
+    }
+</script>

@@ -1,0 +1,23 @@
+  select:hover,
+  select:active,
+  select:checked {
+    color: red;
+  }
+ 
+  select{
+    padding: 7px 7px;
+    width: 360px;
+    margin: 7px;
+    border: none;
+    border-left: 7px solid var(--main);
+    border-radius: 2px;
+    background-color: var(--main-dark);
+    color: #aeaeae;
+    transition: 0.2s;
+}
+
+select:focus{
+    outline: none;
+    border-left: 10px solid hsl(255, 84%, 80%);
+}
+

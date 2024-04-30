@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 15 (desafio). Refaça a 14ª questão de tal forma que, ao final do relatório, o programa exiba: 
+
+a) O nome do produto mais caro 
+
+b) O nome do produto mais barato 
+
+c) A soma dos preços de compra dos produtos 
+
+d) A média de preço de venda dos produtos  -->
+
+    <label>Nome do Produto:</label><input type="text" id="iptNomeProduto">
+    <label>Preço de Compra:</label><input type="text" id="iptPrecoProduto">
+    <button onclick="listagem()">Cadastrar</button>
+    <br><br>
+    <span id="spanMensagem"></span>
+</body>
+
+</html>
+
+<script>
+
+    var listaProduto = [];
+    var listaPrecoProduto = [];
+
+    function listagem() {
+
+        var nomeProduto = iptNomeProduto.value
+        var precoProduto = iptPrecoProduto.value
+
+        listaProduto.push(nomeProduto)
+        listaPrecoProduto.push(precoProduto)
+
+        console.log("lista produto", listaProduto, "lista Preço", listaPrecoProduto)
+
+        for (var index = 0; index < listaProduto.length; index++) {
+            for (var contPreco = 0; contPreco < listaPrecoProduto.lengt; contPreco++) {
+                var listaPrecoAtual = listaPrecoProduto[contPreco];
+            }
+            var listaAtualProduto = listaProduto[index];
+        }
+        spanMensagem.innerHTML += `Total de Produtos: ${listaProduto.length} <br> Produto ${index}: ${listaAtualProduto} <br> Preço de Compra: ${listaPrecoAtual} <br> Vender por: <br><br>`
+    }
+
+
+</script>

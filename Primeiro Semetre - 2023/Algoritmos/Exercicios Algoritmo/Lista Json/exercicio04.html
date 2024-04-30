@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04 - Lista Json</title>
+</head>
+
+<body>
+    <!-- 4. Crie um programa no qual informe os nomes dos três melhores times de São Paulo (o Juventus da Mooca tem que estar contido), quantas vitórias, quantos empates e quantas derrotass 2 times de futebol possuem no campeonato. Após clicar num botão "Comparar campanhas" faça: 
+
+verifique se todos os times têm a mesma quantidade de jogos (vitórias + empates + derrotass), caso contrário, emitir alerta com mensagem explicativa.  
+
+exiba uma frase como esta: 
+
+      Primeiro Lugar - O time A terminou o campeonato com AX pontos 
+
+      Segundo Lugar - O time B terminou o campeonato com BX pontos 
+
+      Terceiro Lugar - O time C terminou o campeonato com CX pontos 
+
+Onde o X de cada time é calculado assim: 
+
+Vitória: 3 pontos 
+Empate: 1 ponto 
+derrotas: 0 pontos 
+
+OBS. A quantidade de vitórias é usada como o critério de desempate para dois ou mais times que obtiveram a mesma pontuação. Se mesmo assim houver empate os times ocuparão a mesma posição, ou seja, por exemplo, se os dois melhores times têm a mesma pontuação e a mesma quantidade de vitórias, eles ficarão em primeiro lugar e o outro time ficará em terceiro lugar.  -->
+
+    Vitórias Time <b>São Caetano Dos Sul</b>:
+    <input id="qtd_vitoria_time01">
+    <br> <br>
+    Empates Time <b>São Caetano Dos Sul</b>:
+    <input id="qtd_empate_time01">
+    <br> <br>
+    DerrotasTime <b>São Caetano Dos Sul</b>:
+    <input id="qtd_derrotas_time01">
+    <br>
+    <br>
+    <br>
+
+    Vitórias Time <b>Santos</b>:
+    <input id="qtd_vitoria_time02">
+    <br> <br>
+    Empates Time <b>Santos</b>:
+    <input id="qtd_empate_time02">
+    <br> <br>
+    Derrotas Time <b>Santos</b>:
+    <input id="qtd_derrotas_time02">
+    <br>
+    <br>
+    <br>
+
+    Vitórias Time <b>Juventus da MOOCA</b>:
+    <input id="qtd_vitoria_time03">
+    <br> <br>
+    Empates Time <b>Juventus da MOOCA</b>:
+    <input id="qtd_empate_time03">
+    <br> <br>
+    Derrotas Time <b>Juventus da MOOCA</b>:
+    <input id="qtd_derrotas_time03">
+    <br>
+    <br>
+    <br>
+
+    <button onclick="campanha()">Comparar Campanhas</button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+<script>
+    div_mensagem.innerHTML += "";
+
+    function campanha() {
+        var nome_time = {
+            nome_time01: "São Caetano do Sul",
+            nome_time02: "Juventos da MOOCA",
+            nome_time03: "Santos",
+        }
+
+        var pontuacao_time = {
+            vitoria: 3,
+            derrota: 0,
+            empate: 1,
+        }
+
+        var vitoria_time01 = Number(qtd_vitoria_time01.value);
+        var empate_time01 = Number(qtd_empate_time01.value);
+        var derrota_time01 = Number(qtd_derrotas_time01.value);
+
+        var vitoria_time02 = Number(qtd_vitoria_time02.value);
+        var empate_time02 = Number(qtd_empate_time02.value);
+        var derrota_time02 = Number(qtd_derrotas_time02.value);
+
+        var vitoria_time03 = Number(qtd_vitoria_time03.value);
+        var empate_time03 = Number(qtd_empate_time03.value);
+        var derrota_time03 = Number(qtd_derrotas_time03.value);
+
+        var qtd_jogos_time01 = (qtd_vitoria_time01.value + qtd_empate_time01.value + qtd_derrotas_time01.value)
+        var qtd_jogos_time02 = (qtd_vitoria_time02.value + qtd_empate_time02.value + qtd_derrotas_time02.value)
+        var qtd_jogos_time03 = (qtd_vitoria_time03.value + qtd_empate_time03.value + qtd_derrotas_time03.value);
+
+        var pontuacao_time01 = (qtd_vitoria_time01 * 3) + (qtd_empate_time01 * 1);
+        var pontuacao_time02 = (qtd_vitoria_time02 * 3) + (qtd_empate_time02 * 1);
+        var pontuacao_time03 = (qtd_vitoria_time03 * 3) + (qtd_empate_time03 * 1);
+
+        if ((qtd_jogos_time01 == qtd_jogos_time02) && (qtd_jogos_time01 == qtd_jogos_time03) && (qtd_jogos_time02 == qtd_jogos_time03)) {
+            if ((pontuacao_time01 == pontuacao_time02)) {
+                if (vitoria_time01 > vitoria_time02) {
+                    div_mensagem.innerHTML += `Primeiro Lugar - O time ${nome_time.nome_time01} terminarou o campeonato com ${pontuacao_vitoria_time01} pontos. <br> 
+            Segundo Lugar - O time ${nome_time.nome_time02} terminou o campeonato com ${pontuacao_time02} pontos. <br>
+            Terceiro Lugar - O time ${nome_time.nome_time03} terminou o campeonato com ${pontuacao_time03} pontos `
+                } else if ((pontuacao_time02 == pontuacao_vitoria_time03)) {
+                    if (vitoria_time02 > vitoria_time03) {
+                        div_mensagem.innerHTML += `Primeiro Lugar - O time ${nome_time.nome_time02} terminarou o campeonato com ${pontuacao_vitoria_time02} pontos. <br> 
+            Segundo Lugar - O time ${nome_time.nome_time03} terminou o campeonato com ${pontuacao_time03} pontos. <br>
+            Terceiro Lugar - O time ${nome_time.nome_time02} terminou o campeonato com ${pontuacao_time02} pontos `
+                    }
+                }
+            }
+        } else {
+            alert("Há times que ainda tem jogos a fazer! ")
+        }
+    }
+</script>

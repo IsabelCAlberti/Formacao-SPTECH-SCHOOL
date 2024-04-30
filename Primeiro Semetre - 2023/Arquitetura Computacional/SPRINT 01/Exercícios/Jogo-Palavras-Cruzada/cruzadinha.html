@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cruzadinha.css">
+    <script src="./cruzadinha.js"></script>
+    <title>Cruzadinha</title>
+</head>
+
+<body>
+    <div class="modal" id="id01">
+        <h1>PALAVRAS CRUZADAS</h1>
+		<p>Teste seus conhecimentos em Arquitetura Computacional</p>
+		<button class="start" onclick="inicio()">Começar</button>
+	</div>
+    <div class="fade" id="id02"></div>
+	<div id="div_mascara"></div>
+             <div id="resultado" class="box-container">
+            <div class="erro_resposta" id="boxResposta"></div>
+         </div>
+    <!-- Tela Cruzadinha -->
+    <div class="conteudo">
+                <div id="cruzadinha">
+
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="13"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="16"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td ><input disabled placeholder="11"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><input disabled placeholder="8"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input disabled placeholder="-"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input disabled placeholder="-"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_8" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_13" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_16" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_11" maxlength="1"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_16" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_11" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="2"></td>
+                    <td><input type="text" id="in_palavra_2" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_16" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_2" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="6"></td>
+                    <td><input type="text" id="in_palavra_6" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_6" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_6" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="-"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="4"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="14"></td>
+                    <td><input type="text" id="in_palavra_11" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="12"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="5"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_16" maxlength="1"></td>
+                    <td></td>
+                    <td><input disabled placeholder="3"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_3" maxlength="1"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_16" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_4" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_14" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_11" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_12" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_5" maxlength="1"></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td> <input disabled placeholder="9"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_16" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_4" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="-"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_12" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_5" maxlength="1"></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><input disabled placeholder="15"></td>
+                    <td><input type="text" id="in_palavra_15" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_15" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_15" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_15" maxlength="1"></td>
+                    <td><input disabled placeholder="-"></td>
+                    <td><input type="text" id="in_palavra_15" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_15" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_15" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_15" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_11" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_12" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_5" maxlength="1"></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_9" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_11" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="-"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_5" maxlength="1"></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input disabled placeholder="7"></td>
+                    <td><input type="text" id="in_palavra_7" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_7" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_7" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_7" maxlength="1"></td>
+                    <td><input type="text" id="in_palavra_7" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_11" maxlength="1"></td>
+                    <td></td>
+                    <td><input disabled placeholder="10"></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_12" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input disabled placeholder="1"></td>
+                    <td><input id="in_palavra_1" maxlength="1"></td>
+                    <td><input id="in_palavra_1" maxlength="1"></td>
+                    <td><input id="in_palavra_1" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_10" maxlength="1"></td>
+                    <td></td>
+                    <td><input type="text" id="in_palavra_12" maxlength="1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- QUESTÕES -->
+
+        <div id="perguntas">
+                       <div id="idQuestionBox1" class="question-box apareceu">
+                <p>1) Parte do processador que realiza todas as operações e instruções recebidas, dentro dela ficam a Unidade Lógica e Aritmética, os Registradores e a Unidade de Controle:</p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(1)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(1)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(1)">PRÓXIMA</button>
+                    </div>
+                </div>
+            </div>
+           
+
+            <!-- inicio questão 2 -->
+            <div id="idQuestionBox2" class="question-box">
+                <p>2) Parte responsável por realizar operações aritméticas e lógicas, como adição, subtração, multiplicação, divisão e comparações:</p>
+                    <div class="botoes">
+                        <div id="botao">
+                            <button onclick="resposta(2)">RESPOSTA</button>
+                        </div>
+                        <div id="botao">
+                            <button onclick="verificar(2)">VERIFICAR</button>
+                        </div>
+                        <div id="botao">
+                            <button onclick="proxima(2)">PRÓXIMA</button>
+                        </div>
+                    </div>
+            </div>
+          
+            <div id="idQuestionBox3" class="question-box">
+                <p>3) Componentes de armazenamento de alta velocidade dentro de um processador ou CPU:</p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(3)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(3)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(3)">PRÓXIMA</button>
+                    </div>
+                </div>
+                </div>
+
+            <div id="idQuestionBox4" class="question-box">
+                <p>4) Memória permanente que contém dados pré-gravados pelo fabricante do computador e não podem ser acessadas ou alteradas pelo usuário: </p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(4)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(4)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(4)">PRÓXIMA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 5 -->
+            <div id="idQuestionBox5" class="question-box">
+                <p>5) Memória que permite ao usuário apagar e programar seu conteúdo. Para apagar os dados armazenados, é necessário expô-los à luz ultravioleta:</p>   
+                       <div class="botoes">
+                        <div id="botao">
+                            <button onclick="resposta(5)">RESPOSTA</button>
+                        </div>
+                        <div id="botao">
+                            <button onclick="verificar(5)">VERIFICAR</button>
+                        </div>
+                        <div id="botao">
+                            <button onclick="proxima(5)">PRÓXIMA</button>
+                        </div>
+                    </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 6 -->
+            <div id="idQuestionBox6" class="question-box">
+                <p>6) Memória não volátil que permite a leitura e escrita de dados de forma rápida:</p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(6)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(6)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(6)">PRÓXIMA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 7 -->
+            <div id="idQuestionBox7" class="question-box">
+                <p>7) Tipo de memória não volátil que pode ser eletronicamente apagada e reprogramada:
+                </p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(7)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(7)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(7)">PRÓXIMA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 8 -->
+            <div id="idQuestionBox8" class="question-box">
+                <p>8) Dispositivos de armazenamento que armazenam grandes volumes de dados permanentemente, mesmo quando o computador é desligado:</p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(8)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(8)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(8)">PRÓXIMA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 9 -->
+            <div id="idQuestionBox9" class="question-box">
+                <p>9) Mecanismo de transferência de dados que permite que periféricos acessem diretamente a memória principal, sem a intervenção constante da CPU:</p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(9)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(9)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(9)">PRÓXIMA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 10 -->
+            <div id="idQuestionBox10" class="question-box">
+                <p>10) Responsável por fornecer a comunicação e a coordenação entre os diferentes componentes do sistema:</p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(10)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(10)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(10)">PRÓXIMA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 11 -->
+            <div id="idQuestionBox11" class="question-box">
+                <p>11) Barramento que indica o local onde determinado processo deve ser estraído e para onde deve ser
+                    enviado após o processamento.</p>
+                    <div class="botoes">
+                        <div id="botao">
+                            <button onclick="resposta(11)">RESPOSTA</button>
+                        </div>
+                        <div id="botao">
+                            <button onclick="verificar(11)">VERIFICAR</button>
+                        </div>
+                        <div id="botao">
+                            <button onclick="proxima(11)">PRÓXIMA</button>
+                        </div>
+                    </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 12 -->
+            <div id="idQuestionBox12" class="question-box">
+                <p>12) Barramento responsável pela troca de dados entre componentes de um computador.</p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(12)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(12)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(12)">PRÓXIMA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 13 -->
+            <div id="idQuestionBox13" class="question-box">
+                <p>13) Linha de processadores fabricada desde 2009 pela Intel. Possui (em sua maioria) 4 núcleos, 6MB de
+                    memória cache e é considerado um processador de nível intermediário.</p>
+                    <div class="botoes">
+                        <div id="botao">
+                            <button onclick="resposta(13)">RESPOSTA</button>
+                        </div>
+                        <div id="botao">
+                            <button onclick="verificar(13)">VERIFICAR</button>
+                        </div>
+                        <div id="botao">
+                            <button onclick="proxima(13)">PRÓXIMA</button>
+                        </div>
+                    </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 14 -->
+            <div id="idQuestionBox14" class="question-box">
+                <p>14) Linha de processadores fabricada desde 2008 pela Intel. Seus modelos possuem entre 4 e 8 núcleos,
+                    8GB de memória cache e é considerado um processador top de linha.</p>
+                    <div class="botoes">
+                        <div id="botao">
+                            <button onclick="resposta(14)">RESPOSTA</button>
+                        </div>
+                        <div id="botao">
+                            <button onclick="verificar(14)">VERIFICAR</button>
+                        </div>
+                        <div id="botao">
+                            <button onclick="proxima(14)">PRÓXIMA</button>
+                        </div>
+                    </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 15 -->
+            <div id="idQuestionBox15" class="question-box">
+                <p>15) Categoria de CPU que possui 4 núcleos de processamento.</p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(15)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(15)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(15)">PRÓXIMA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- fim questão -->
+
+            <!-- inicio questão 16 -->
+            <div id="idQuestionBox16" class="question-box">
+                <p>16) Categoria de CPU que possui apenas 2 núcleos de processamento.
+                </p>
+                <div class="botoes">
+                    <div id="botao">
+                        <button onclick="resposta(16)">RESPOSTA</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="verificar(16)">VERIFICAR</button>
+                    </div>
+                    <div id="botao">
+                        <button onclick="proxima(16)">PRÓXIMA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- fim questão -->
+
+          
+
+        </div>
+
+    </div>
+</body>
+
+</html>

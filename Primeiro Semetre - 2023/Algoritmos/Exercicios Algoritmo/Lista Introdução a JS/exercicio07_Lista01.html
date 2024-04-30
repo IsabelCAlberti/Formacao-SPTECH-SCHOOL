@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 06 </title>
+</head>
+<body>
+    Valor da passagem Inteira: <input type="text" id="input_valorPassagem">
+    <br>
+    Quantidade de viagens por mês: <input type="text" id="input_qtdViagensMes">
+
+    <button onclick="economiaMensal()"> "Ver Economia" </button>
+   
+
+</body>
+</html>
+
+<script>
+function economiaMensal(){
+    var passagemValor = parseFloat(input_valorPassagem.value.replace(',', '.'))
+    var qtdViagens = input_qtdViagensMes.value
+
+    alert(" Você economizara " + ((passagemValor / 2) * qtdViagens).toFixed(2) + " por mês")
+}
+</script>

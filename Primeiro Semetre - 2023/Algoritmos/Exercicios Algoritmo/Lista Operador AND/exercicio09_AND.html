@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+
+<body>
+    Altura inicial:
+    <input id="ipt_alturaInicial" min="1">
+    Altura final:
+    <input id="ipt_alturaFinal">
+    Nome:
+    <input id="ipt_nome">
+    Altura do Piloto:
+    <input id="ipt_alturaPiloto">
+
+    <button onclick="validarSelecao()">Ver Processo Seletivo</button>
+
+    <div id="div_mensagemFinal"></div>
+
+</body>
+
+</html>
+<script>
+    function validarSelecao() {
+        var alturaInicial = Number(ipt_alturaInicial.value);
+        var alturaFinal = Number(ipt_alturaFinal.value);
+        var alturaPiloto = Number(ipt_alturaPiloto.value);
+        if (alturaInicial > 1 && alturaFinal > alturaInicial) {
+            div_mensagemFinal.innerHTML = `O candidato ${ipt_nome.value} com altura de ${alturaPiloto} participará do processo de seleção de piloto`;
+        } else {
+            div_mensagemFinal.innerHTML = `Infelizmente o candidato ${ipt_nome.value} com altura de ${alturaPiloto}não atende os requisitos.`
+        }
+    }
+</script>

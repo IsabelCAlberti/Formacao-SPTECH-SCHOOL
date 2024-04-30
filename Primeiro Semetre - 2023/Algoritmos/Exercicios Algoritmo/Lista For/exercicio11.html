@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 24 - Lista For</title>
+</head>
+
+<body>
+    <!-- 24. Crie  um programa o qual:
+
+a) Receba um número do usuário, que deve estar entre 0 e 100;
+
+b) Ao clicar no botão "Ver Divisores", deve exibir na tela, abaixo do botão, todos os divisores do número informado, como o exemplo abaixo, onde o usuário inseriu o número "10": 
+
+     Divisores do Número 10:
+
+     1   /    2   /     5   /       10
+
+OBS: para saber se o número é divisível por outro, o resto da divisão deve ser 0;   -->
+
+
+    Digite um número:
+    <input type="number" id="ipt_num" min="0" max="100">
+    <br>
+    <br>
+    <button onclick="divisor()">Ver divisores</button>
+    <br>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+<script>
+    function divisor() {
+        var numero_usuario = Number(ipt_num.value);
+        div_mensagem.innerHTML = `Os divisores de ${numero_usuario} são: <br>`;
+
+        for (var divisor = 1; divisor <= numero_usuario; divisor++) {
+            if (numero_usuario % divisor == 0) {
+                div_mensagem.innerHTML += `${divisor}<br>`;
+            }
+        }
+    }
+</script>

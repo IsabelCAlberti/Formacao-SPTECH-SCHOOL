@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07 - Lista 05</title>
+</head>
+<body>
+    <!-- 10. Faça um programa o qual: 
+
+ a) Pergunte ao usuário o valor de seu saldo na conta do banco 
+
+ b) Ao clicar num botão "Verificar finanças"... 
+
+b.1) Caso o saldo em conta for igual a zero (==0),
+exiba esta frase na cor preta na tela: "Conta zerada". 
+
+b.2) Caso o saldo seja negativo (<0), 
+exiba esta frase na cor vermelha na tela: "Está devendo!".  
+
+b.3) Caso o saldo seja positivo (>0), 
+exiba esta frase na cor azul: "Saldo positivo! sorriso"  -->
+
+Saldo da Conta:
+<input id="ipt_saldoConta">
+<button onclick="verificarFinancas()">Verificar Finanças</button>
+<div id="div_mensagemFinal"></div>
+</body>
+</html>
+<script>
+function verificarFinancas(){
+    var saldoConta = Number(ipt_saldoConta.value);
+    if (saldoConta == 0) {
+        div_mensagemFinal.innerHTML = "Conta zerada."
+    } else {
+if(saldoConta < 0){
+    div_mensagemFinal.innerHTML = `<p style= "color:red"> Está devendo!.</p>`
+
+} else{
+    div_mensagemFinal.innerHTML = `<p style= "color:blue">Saldo positivo! sorriso =)</p>`
+}
+    }
+}
+</script>

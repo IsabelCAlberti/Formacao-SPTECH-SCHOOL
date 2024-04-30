@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey Jude | Exercício</title>
+</head>
+
+<body>
+    <p> Quantidades de TAKEs: </p>
+    <input id="ipt_qtd_takes">
+    <br>
+    <p> Quantas vezes quer que apareça "Nah,nah,nah,nah,nah,nah,nah,nah,nah,
+        Hey, Jude"? </p>
+    <input id="ipt_qtd_heyJudes">
+    <br>
+    <br>
+    <button onclick="calculo_takes()">Simular</button>
+    <br>
+    <br>
+    <div id="div_mensagem_final"></div>
+</body>
+
+</html>
+
+<script>
+    var letra_Musica_parte1 = `Hey, Jude, don't make it bad <br> Take a sad song and make it better <br> Remember to let her into your heart<br> Then you can start to make it better <br> Hey, Jude, don't be afraid <br> You were made to go out and get her <br> The minute you let her under your skin <br> Then you begin to make it better<br> And anytime you feel the pain, <br> Don't carry the world upon your shoulders <br>For well you know that it's a fool <br>Who plays it cool <br> By making his world a little colder <br> `
+
+    var letra_Musica_parte2 = `<br> Hey, Jude, don't let me down <br> You have found her, now go and get her <br> Remember to let her into your heart <br> Then you can start to make it better <br> So let it out and let it in, <br> Hey, Jude, begin <br> You're waiting for someone to perform with <br> And don't you know that it's just you, <br> Hey, Jude, you'll do <br> The movement you need is on your shoulder <br> `
+
+    var letra_Musica_parte3 = `<br> Hey, Jude, don't make it bad <br> Take a sad song and make it better <br>  Remember to let her under your skin <br> Then you'll begin to make it better, better, better, better, better... oh! <br> `
+
+  
+
+    function calculo_takes() {
+
+        var nahMaiusculo = 'Nah,';
+        var padrao2 ="";
+
+        var qtd_take = Number(ipt_qtd_takes.value);
+        var qtd_Hey_Judes = Number(ipt_qtd_heyJudes.value);
+
+        div_mensagem_final.innerHTML = '';
+
+        for (var cont_take = 1; cont_take <= qtd_take; cont_take++) {
+            var qtd_padrao2 = qtd_Hey_Judes + qtd_take;
+           
+            for (var cont_padrao2 = 1; cont_padrao2 <= qtd_padrao2; cont_padrao2++) {
+                padrao2 += nahMaiusculo + "Hey Jude <br>";
+                
+                if (qtd_take % 2 == 0) {
+                   div_mensagem_final.innerHTML += `<b>TAKE ${cont_take}</b> <br><br> ${letra_Musica_parte1} <p style="color:red;"><b> ${nahMaiusculo}</b></p>${letra_Musica_parte2}<b><p style="color:red;">${nahMaiusculo}</b></p>${letra_Musica_parte3}<b><p style="color:red;">${padrao2}</p></b><br><br>`;
+                    nahMaiusculo += " nah,"
+                } else {
+                    div_mensagem_final.innerHTML += `<b>TAKE ${cont_take}</b><br><br> ${letra_Musica_parte1} <p style="color:blue;"> <b>${nahMaiusculo}</b></p>${letra_Musica_parte2}<b> <p style="color:blue;">${nahMaiusculo}</b></p>${letra_Musica_parte3}<b><p style="color:blue;">${padrao2}</p></b><br><br>`;
+                    nahMaiusculo += " nah,"
+                }
+            }
+            }
+
+        }
+
+</script>

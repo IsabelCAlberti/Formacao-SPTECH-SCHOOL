@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 9.  Crie um programa o qual:
+
+a) Pergunte para o usuário o nome de cada projeto que já criou na vida. Ele digita e clica em "Registrar projeto". 
+Na medida que ele vai cadastrando, 
+verifique quantos projetos já foram cadastrados
+ e exiba o seguinte texto abaixo: 
+
+Você já fez X projetos. Por isso você é um profissional Z sendo X  a quantidade de projetos e Z é seu nível de experiência, 
+segundo estas regras: 
+
+  0 a 4: Júnior 
+
+  5 a 12: Pleno desde o projeto "nome do 5º projeto" 
+
+u mais: Sênior desde o projeto "nome do 13º projeto" 
+
+b)  Tenha um botão “Mostrar Projetos” que quando clicado mostra os projetos cadastrados, um abaixo do outro, em ordem inversa ao que foi cadastrado.   -->
+
+
+    <input type="text" placeholder="Projetos" id="ipt_projetos_criados">
+    <button onclick="registrar()">Registrar Projeto</button>
+    <br>
+    <br>
+    <span id="span_vazia"></span>
+
+</body>
+
+</html>
+
+<script>
+    var listaProjetos = [];
+
+    function registrar() {
+        var projetosUsuario = ipt_projetos_criados.value;
+        listaProjetos.push(projetosUsuario)
+
+        for (qtdProj = 1; qtdProj < listaProjetos.length; qtdProj++) {
+            listaQtdProjetos = [qtdProj]
+
+            if (listaQtdProjetos >= 13) {
+                span_vazia.innerHTML = `Você já fez: ${listaQtdProjetos} projetos. Por isso você é um profissional Sênior`;
+            } else if (listaQtdProjetos >= 5) {
+                span_vazia.innerHTML = `Você já fez: ${listaQtdProjetos} projetos. Por isso você é um profissional Pleno`;
+            } else {
+                span_vazia.innerHTML = `Você já fez: ${listaQtdProjetos} projetos. Por isso você é um profissional Júnior`;
+            }
+
+          }
+    }
+</script>

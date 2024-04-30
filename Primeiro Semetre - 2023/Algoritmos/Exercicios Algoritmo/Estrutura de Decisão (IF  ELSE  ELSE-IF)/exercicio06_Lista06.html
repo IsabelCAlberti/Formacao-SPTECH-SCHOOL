@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06 - Lista 06</title>
+</head>
+
+<body>
+    <!-- a) Pergunte qual time grande São Paulo o usuário torce. -->
+    Qual time da Grande São Paulo você torce:
+    <input id="ipt_timeTorcedor"></input>
+    <!-- b) Ao clicar em "Fale sobre esse time", exiba abaixo:  -->
+    <button onclick="frasesTimes()">Fale sobre esse time</button>
+    <div id="div_mensagemTimes"></div>
+</body>
+
+</html>
+<script>
+    function frasesTimes() {
+        if (ipt_timeTorcedor.value == "Corinthians") {
+            div_mensagemTimes.innerHTML = `<p style="color:#ffffff ; background-color: black";> "Salve o Corinthians" </p>`
+        } else if (ipt_timeTorcedor.value == "Palmeiras") {
+            div_mensagemTimes.innerHTML = `<p style="color: #ffffff; background-color: green";> "Salve o alviverde imponente" </p>`
+        } else if (ipt_timeTorcedor.value == "Santos") {
+            div_mensagemTimes.innerHTML = `<p style="color: black ; background-color: #ffffff";> <b>"Agora quem dá a bola é o Santos"</b></p>`
+        } else if (ipt_timeTorcedor.value == "São Paulo") {
+            div_mensagemTimes.innerHTML = `<p style="color: red ; background-color: black";> <b>"Salve o Tricolor paulista" </b></p>`
+        }
+    }
+</script>

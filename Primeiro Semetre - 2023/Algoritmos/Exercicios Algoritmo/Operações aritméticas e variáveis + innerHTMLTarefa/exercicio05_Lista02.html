@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio05 - Lista 02</title>
+</head>
+
+<body>
+
+    Valor da passagem de Ônibus <input id="input_valorPassagem">
+    Quantidade de passagens <input id="input_qtdPassagens">
+    Distância de seu trabalho até sua casa <input id="input_distancia"> (Km)
+
+    <button onclick="custosVT()"> Calcular VT </button>
+
+    <div id="div_exibicaoMgsFinal"> </div>
+
+</body>
+
+</html>
+
+
+<script>
+    function custosVT() {
+        var valorPassagem = Number(input_valorPassagem.value);
+        //document.getElementById("input_valorPassagem")
+        var qtdPassagens = Number(input_qtdPassagens.value);
+        var distanciaKm = Number(input_distancia.value);
+
+
+        var numeroViagensUber = (qtdPassagens * 10) / 100;
+        //console.log("numeroViagensUber: ", numeroViagensUber)
+
+        var custoPorKmUber = distanciaKm * 0.75;
+        //console.log("custoPorKmUber: ", custoPorKmUber);
+
+        var gastoTransporteMensalUber = numeroViagensUber * custoPorKmUber;
+        // console.log("gastoTransporteMensalUber: ", gastoTransporteMensalUber);
+
+
+        var gastoTransporteMensalOnibus = (valorPassagem * qtdPassagens) - numeroViagensUber;
+        //console.log("gastoTransporteMensalOnibus: ", gastoTransporteMensalOnibus);
+
+        var mensagemFinal = `Você vai gastar R$ ${gastoTransporteMensalOnibus + gastoTransporteMensalUber} por mês com transporte.`
+
+        div_exibicaoMgsFinal.innerHTML = mensagemFinal;
+    }
+
+</script>

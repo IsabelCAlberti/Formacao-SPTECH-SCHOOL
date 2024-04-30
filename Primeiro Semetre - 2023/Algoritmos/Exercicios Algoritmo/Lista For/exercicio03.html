@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 17 - Lista For</title>
+</head>
+<body>
+    <!-- Incremente a questão anterior de tal forma que: 
+
+a) Também tenha um campo no qual o usuário indique a capacidade de passageiros que o veículo suporta 
+
+b) Ao clicar no botão, as frases só começam a mostrar que o passageiro terá que esperar quando a capacidade indicada em a) for excedida. -->
+
+Quantas pessoas vão entrar no carro ?
+<input id="ipt_qtd_caronas">
+<br>
+<br>
+Quantidade de pessoas que cabem no carro:
+<input id="ipt_max_caronas">
+<br>
+<br>
+
+<button onclick="contagem_caronas()">#Partiu Carona</button>
+<div id="mensagem_caronas"></div>
+
+</body>
+</html>
+<script>
+    function contagem_caronas() {
+        var qtd_caronas = Number(ipt_qtd_caronas.value);
+        var max_caronas = Number(ipt_max_caronas.value);
+
+        for (var cont_qtd_caronas = 1; cont_qtd_caronas <= qtd_caronas; cont_qtd_caronas++) {
+            if (cont_qtd_caronas == 1) {
+                mensagem_caronas.innerHTML += `Entrou o ${cont_qtd_caronas}º passageiro. (que é o(a) motorista) <br>`
+            } else if (cont_qtd_caronas > max_caronas) {
+                mensagem_caronas.innerHTML += ` O ${cont_qtd_caronas}º passageiro terá que esperar!<br>`
+            } else {
+                mensagem_caronas.innerHTML += `Entrou o ${cont_qtd_caronas}º passageiro.<br>`
+            }
+        }
+    }
+</script>

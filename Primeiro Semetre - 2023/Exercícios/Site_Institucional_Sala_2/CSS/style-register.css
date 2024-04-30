@@ -1,0 +1,32 @@
+.formulario{
+  display: flex;
+  flex-direction: column;
+  color: #ce477f;
+  background-color: antiquewhite;
+  padding: 25px;
+  border-radius: 30px 10px;
+}
+
+.formulario h4{
+  margin: 0;
+}
+
+.formulario .saudacao{
+  font-size: 25px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.formulario .email, .senha,.btn_forms, .ipt_email, .ipt_senha  {
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.btn_forms{
+  padding: 5px;
+}
+
+
+
+

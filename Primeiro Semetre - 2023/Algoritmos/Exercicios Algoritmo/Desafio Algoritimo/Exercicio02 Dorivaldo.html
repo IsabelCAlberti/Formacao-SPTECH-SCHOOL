@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Crie um programa o qual: 
+a) Solicite um número negativo menor que -1.
+b) Ao clicar em "Listar Negativos", o programa deve listar todos os números negativos entre -1 e o número informado em a). Mas caso o número informado não seja válido, exiba uma mensagem de erro explicativa e encerre.
+c) Ao exibir um número negativo, valide se o número é divisível por 3, onde caso seja, exiba o texto "*3" em negrito e na cor vermelha, ao lado do número listado.  -->
+
+Digite um valor menor que 0:
+<input id="ipt_num_menor0">
+<br>
+<br>
+<button onclick="verificar_negativos()">Listar Negativos</button>
+<br>
+<br>
+<div id="div_vazia"></div>
+</body>
+</html>
+<script>
+    function verificar_negativos(){
+        var numeros_Negativos = Number(ipt_num_menor0.valor);
+        div_vazia.innerHTML += `OLÁ BB` 
+    }
+</script>

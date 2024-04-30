@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Algoritimo AC2</title>
+</head>
+
+<body>
+    <!-- cada clone criado consome 20 pontos da “energia” do Naruto.  -->
+
+    Quantidade de pontos de energia do Naruto:
+    <input id="ipt_pontos_energia">
+    <br>
+    <br>
+    Quantidade de clones desejado do Naruto:
+    <input id="ipt_clones_naruto">
+    <br>
+    <br>
+    Quantidade de clones por linha
+    <input id="ipt_clones_em_linhas">
+    <br>
+    <br>
+    <button onclick="clonando()">Criar Clones</button>
+    <br>
+    <br>
+    <div id="div_vazia"></div>
+
+</body>
+
+</html>
+<script>
+    function clonando() {
+        var pts_energia = Number(ipt_pontos_energia.value)
+        var qtd_clones = Number(ipt_clones_naruto.value)
+        var clone_linhas = Number(ipt_clones_em_linhas.value)
+        var sobra_energia = (pts_energia - (qtd_clones * 20));
+        var percentual_sobra = (sobra_energia / pts_energia) * 100;
+        div_vazia.innerHTML = "";
+
+        if ((pts_energia < 20 || pts_energia > 5000) && (qtd_clones < 0 || qtd_clones > 250) && clone_linhas <= 0) {
+            div_vazia.innerHTML = `“ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0”.`
+        } else {
+            if (pts_energia >= (qtd_clones * 20)) {
+                for (var cont_narutos = 1; cont_narutos <= clone_linhas; cont_narutos++) {
+                    div_vazia.innerHTML += `<img src= "naruto.png" height="100px" ><br>`
+                } div_vazia.innerHTML += `<br><b>---- ANÁLISE DA GERAÇÃO DE CLONES ---- </b><br> Energia Inicial: ${pts_energia} <br> Qtde de Clones: ${qtd_clones} <br> Sobra da Energia: ${sobra_energia} `
+            } else {
+                alert("Você não tem energia suficiente para gerar mais clones!")
+            }
+        }
+        if (sobra_energia > 1000 || qtd_clones > 50 && (percentual_sobra >= 20)) {
+            console.log("ifzinho")
+            div_vazia.innerHTML += `<br> PROVAVELMENTE VOCE VAI GANHAR!!!`
+        } else if (sobra_energia > 500 || qtd_clones >= 20 || qtd_clones <= 50 && (percentual_sobra >= 10)) {
+            div_vazia.innerHTML += `<br> A LUTA VAI SER MUITO BOA!`
+        } else {
+            div_vazia.innerHTML += `<br> TORÇA PARA O ADVERSÁRIO SER FRAQUINHO...`
+        }
+    }
+
+</script>

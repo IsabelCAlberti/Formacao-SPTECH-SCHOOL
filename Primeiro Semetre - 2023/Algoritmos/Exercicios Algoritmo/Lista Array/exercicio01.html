@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. Crie um Programa em HTML o qual: 
+
+a) Tenha uma lista de frutas a qual o usuário não vê 
+
+b) Tenha na tela um campo na qual o usuário digita o nome de uma fruta e um botão "Pesquisar" 
+
+c) Ao clicar nesse botão, o programa busca essa fruta na lista. 
+Se achar, exibe um texto abaixo com uma frase como esta: 
+
+     A fruta X existe na lista 
+
+d) Caso a fruta pesquisada não exista, exiba: 
+
+     "Não existe a fruta X na lista" -->
+
+
+
+    <input type="text" id="ipt_fruta_usuario" placeholder="Digite uma fruta">
+
+    <button onclick="pesquisarFruta()">Pesquisar</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+<script>
+
+
+    var listaFrutas = ["Kiwi", "Banana", "Manga", "Morango", "Abacaxi"];
+    function pesquisarFruta() {
+
+
+
+        var frutaUsuario = ipt_fruta_usuario.value
+
+        var verificarFruta = (frutaUsuario == listaFrutas[0]) || (frutaUsuario == listaFrutas[1]) || (frutaUsuario == listaFrutas[2]) || (frutaUsuario == listaFrutas[3]) || (frutaUsuario == listaFrutas[4])
+
+        div_mensagem.innerHTML = "";
+
+        if (verificarFruta) {
+            div_mensagem.innerHTML += ` A fruta ${frutaUsuario} existe na lista `
+        } else {
+            div_mensagem.innerHTML += `Não existe a fruta ${frutaUsuario} na lista`
+        }
+    }
+
+</script>

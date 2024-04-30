@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 5. Crie um programa o qual: 
+
+a) Usuário vai cadastrando os nomes de seus filmes favoritos. Digita num campo e clica em "Cadastrar" 
+
+b) Ele pode cadastrar quantos filmes quiser 
+
+c) Na medida que vai cadastrando, deve ser exibido ou atualizado um "painel" como neste exemplo: 
+
+
+  Seu filme favorito: Donnie Darko
+
+  Seu 3º filme favorito: A era do gelo 1 
+
+  Total de filmes cadastrados: 5 
+
+ 
+
+OBS: no "3º filme", caso não tenham sido cadastrados ainda 3 filmes, exibir "Ainda não existe". 
+
+OBS: o "filme favorito" é o primeiro cadastrado. -->
+
+
+    <input type="text" placeholder="Filmes" id="ipt_filmes_usuario">
+    <button onclick="registrar()">Cadastrar</button>
+    <br>
+    <br>
+    <span id="span_vazia"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    var listaFilmes = [];
+    span_vazia.innerHTML = "";
+
+    function registrar() {
+        var filmesUsuario = ipt_filmes_usuario.value;
+        listaFilmes.push(filmesUsuario)
+    
+            span_vazia.innerHTML = ` Seu filme favorito é: ${listaFilmes[0]} <br>
+        seu 3º Filme favorito é: ${listaFilmes[2]} <br> 
+        O último filme cadastrado:  ${listaFilmes[listaFilmes.length - 1]} <br>
+        Total de Filmes: ${listaFilmes.length}`
+
+        
+    }
+</script>

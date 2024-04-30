@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06 - Lista 04</title>
+</head>
+
+<body>
+
+    Sua renda Familiar: <input id="input_rendaFamiliar">
+    Valor da Prestação da casa: <input id="input_prestacao">
+
+    <button onclick="calculofinaciamento()"> Verificar Financiamento </button>
+
+    <div id='div_mensagemFinal'></div>
+
+</body>
+
+</html>
+<script>
+    function calculofinaciamento() {
+        var rendaFamiliar = Number(input_rendaFamiliar.value);
+        var rendaFamPorc = Number((rendaFamiliar * 30) / 100);
+        var prestacao = Number(input_prestacao.value);
+        var valorDaPrestacao = (prestacao / rendaFamiliar) * 100;
+        var mensagemFinal = "A prestação corresponde a " + rendaFamPorc + " % da renda familiar";
+        div_mensagemFinal.innerHTML = mensagemFinal;
+
+        if (rendaFamPorc > 30) {
+            var texto = "Será necessário complementar a renda familia";
+            var textoColor = texto.fontcolor("red");
+            div_mensagemFinal.innerHTML += `<strong> \n ${textoColor} </strong>`;
+
+        }
+    }
+</script>

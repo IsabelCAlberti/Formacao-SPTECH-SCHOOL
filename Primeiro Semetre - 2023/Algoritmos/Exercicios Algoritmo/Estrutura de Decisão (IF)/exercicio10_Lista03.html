@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 10 - Lista 04 </title>
+</head>
+
+<body>
+    Seu Saldo Bancário: <input id="input_saldo">
+
+    <button onclick="calculofinanceiro()"> Verificar Finanças </button>
+
+    <div id='div_mensagemFinal'></div>
+
+</body>
+
+</html>
+<script>
+    function calculofinanceiro() {
+        var saldoBancario = Number(input_saldo.value);
+
+        if (saldoBancario == 0) {
+            var texto = "Conta zerada";
+            var textoColor = texto.fontcolor("red");
+            div_mensagemFinal.innerHTML = textoColor;
+        }
+
+        if (saldoBancario < 0) {
+            var texto = `<strong> Está devendo! </strong>`;
+            var textoColor = texto.fontcolor("black");
+            div_mensagemFinal.innerHTML = textoColor;
+        }
+
+        if (saldoBancario > 0) {
+            var texto = "Saldo positivo! sorriso";
+            var textoColor = texto.fontcolor("blue");
+            div_mensagemFinal.innerHTML = textoColor;
+        }
+    }
+</script>

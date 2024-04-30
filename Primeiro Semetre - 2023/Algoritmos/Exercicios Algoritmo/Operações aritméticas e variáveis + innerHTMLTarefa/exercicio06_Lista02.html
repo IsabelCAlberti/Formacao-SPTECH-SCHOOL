@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio06 - Lista 02</title>
+</head>
+
+<body>
+
+    Ki Inicial do Guerreiro <input id="input_kiBase">
+    <p> Transformar em ... </p>
+
+    <button onclick="calculoSSJ()"> SSJ </button>
+    <button onclick="calculoSSJ2()"> SSJ2 </button>
+    <button onclick="calculoSSJ3()"> SSJ3 </button>
+
+    <div id="div_exibicaoMgsFinal"> </div>
+
+</body>
+
+</html>
+
+
+<script>
+    function calculoSSJ() {
+
+        var kiSSJ = Number(input_kiBase) * 50;
+
+        var mensagemFinal = ` Após se transformar em SSJ o ki desse Sayajin passa a ser de ${kiSSJ}.`
+
+        div_exibicaoMgsFinal.innerHTML = mensagemFinal;
+    }
+
+    function calculoSSJ2() {
+
+        var kiSSJ2 = Number(input_kiBase) * 100;
+        var mensagemFinal = ` Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${kiSSJ2}.`
+
+        div_exibicaoMgsFinal.innerHTML = mensagemFinal;
+    }
+
+    function calculoSSJ3() {
+
+        var kiSSJ3 = Number(input_kiBase) * 100;
+
+        var mensagemFinal = ` Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${kiSSJ3}.`
+
+        div_exibicaoMgsFinal.innerHTML = mensagemFinal;
+    }
+</script>

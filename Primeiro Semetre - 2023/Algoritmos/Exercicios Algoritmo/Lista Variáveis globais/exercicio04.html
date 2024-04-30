@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- 4) Crie um programa em HTML/JS o qual:
+a) Tenha, no topo da página os botões "Mover p/ Esquerda" e "Mover p/ Direita", lado a lado
+b) Ao lado dos botões, uma caixa de entrada de texto com a indicação "Quantos pixels"
+c) Abaixo de tudo isso uma figura do Bart Simpson num skate
+d) Ao clicar no "Mover p/ Esquerda", a figura do Bart se move para a esquerda em X pixels, conforme o valor da caixa de entrada de texto
+e) Ao clicar no "Mover p/ Direita", a figura do Bart se move para a direita em X pixels, conforme o valor da caixa de entrada de texto
+#FicaDica: Use a propriedade de estilo "margin-left", a qual, via Javascript é acessível com "marginLeft". --> 
+
+<button onclick="mover_esquerda()"> Mover para a Esquerda</button>
+<button onclick="mover_direita()"> Mover para a Direita</button>
+<p>Quantos Pixels:<input id="ipt_pixels"></p>
+<br>
+<span id="span_imagem">
+    <img style="width: 20rem; height: 10rem;" src="https://w7.pngwing.com/pngs/664/547/png-transparent-bart-simpson-on-skateboard-bart-simpson-homer-simpson-lisa-simpson-the-simpsons-skateboarding-milhouse-van-houten-bart-simpson-cartoon-vehicle-simpsons.png">
+</span>
+
+</body>
+</html>
+<script>
+    var pixels = Number(ipt_pixels.value); 
+    var margem = 0;
+    
+    function mover_direita(){
+    span_imagem.innerHTML=
+    `<img style="margin-right: ${margem += pixels}" src="https://w7.pngwing.com/pngs/664/547/png-transparent-bart-simpson-on-skateboard-bart-simpson-homer-simpson-lisa-simpson-the-simpsons-skateboarding-milhouse-van-houten-bart-simpson-cartoon-vehicle-simpsons.png" alt="bartSimpsonNoSkate">`
+    }
+
+    function mover_esquerda(){
+        span_imagem.innerHTML=`<img style="margin-left: ${margem += pixels};" src="https://w7.pngwing.com/pngs/664/547/png-transparent-bart-simpson-on-skateboard-bart-simpson-homer-simpson-lisa-simpson-the-simpsons-skateboarding-milhouse-van-houten-bart-simpson-cartoon-vehicle-simpsons.png"  >`
+    }
+</script>

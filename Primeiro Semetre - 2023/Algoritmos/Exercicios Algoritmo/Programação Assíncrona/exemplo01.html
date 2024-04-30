@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var pedirPizza = new Promise(function(entregarResultado, informarErro){
+       setTimeout(function(){
+entregarResultado("Oloco meu, chegou!")
+       }, 5000);
+//         if(1==2){
+//             entregarResultado("Esta ok, sua pizza chegou")
+//         } else {
+// informarErro("acabou a mussarela")
+//         }
+    });
+
+    pedirPizza.then(function(resultado){
+console.log(resultado)
+    }).catch(function(erro){
+        console.log(erro)
+    });
+
+fetch("https://viacep.com.br/ws/01510000/json/")
+.then(function(resposta){
+    return resposta.json()
+}).then(function(endereco){
+console.log(endereco)
+}).catch(function(erro){
+console.log("Deu erro no via cep")
+})
+
+console.log(Date(Date.now()))
+
+</script>

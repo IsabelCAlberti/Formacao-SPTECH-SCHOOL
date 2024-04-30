@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 04 - LISTA OR</title>
+</head>
+<body>
+    <!-- 4. Crie um programa que avalie a possibilidade de um pagamento da compra ser parcelado ou não. 
+
+a) Pergunte o modo de pagamento dentre as seguintes opções: 
+
+    Dinheiro 
+    Cartão de débito 
+    Cartão de crédito 
+    Boleto 
+
+b) Ao clicar num botão "Analisar compra", exiba uma dessa mensagens: 
+
+   "Você terá que pagar a vista", somente se o pagamento for dinheiro ou débito 
+   "Pagamento poderá ser parcelado", se o pagamento for crédito ou boleto  -->
+
+<h1>Modo de pagamento:</h1>
+<b>(1)</b> Dinheiro <br>
+<b>(2)</b> Cartão de débito <br>
+<b>(3)</b> Cartão de crédito <br>
+<b>(4)</b> Boleto <br><br>
+<input type="number" id="ipt_modo_pagamento" min="1" max="4">
+
+<button onclick="analisar_compra()">Analisar Compra</button>
+<div id="div_mensagem_final"></div>
+</body>
+</html>
+<script>
+    function analisar_compra(){
+        var modo_pagamento = Number(ipt_modo_pagamento.value);
+        if (modo_pagamento == 1 || modo_pagamento == 2) {
+            div_mensagem_final.innerHTML = "Você terá que pagar a vista";
+        } else {
+            div_mensagem_final.innerHTML = "Pagamento poderá ser parcelado";
+        }
+    }
+</script>

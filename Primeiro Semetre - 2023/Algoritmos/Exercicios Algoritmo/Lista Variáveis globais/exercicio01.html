@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+
+<body>
+    <!-- 1) Crie um programa em HTML/JS o qual:
+a) Tenha na tela uma figura qualquer
+b) Abaixo da figura, 2 botões: "Aumentar a largura" e "Reduzir a largura"
+
+c) Ao clicar no primeiro botão, aumente a largura da imagem em 10px
+d) Ao clicar no segundo botão, reduza a largura da imagem em 10px -->
+
+    <span id="span_img_troll">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/7/73/Trollface.png" alt="troll faces"></span><br><br>
+    <button onclick="aumentandoLargura()">Aumentar Largura</button>
+    <button onclick="reduzindoLargura()">Reduzir Largura</button>
+
+</body>
+
+</html>
+<script>
+    var largura_img = 300;
+    var altura_img = 350;
+
+    function aumentandoLargura() {
+       
+        span_img_troll.innerHTML = `
+      <img src="https://upload.wikimedia.org/wikipedia/pt/7/73/Trollface.png" 
+      width="${ largura_img += 10}" height="${altura_img += 10}" alt="troll faces">
+      `
+    }
+
+    function reduzindoLargura() {
+        
+        span_img_troll.innerHTML = `
+      <img src="https://upload.wikimedia.org/wikipedia/pt/7/73/Trollface.png"
+    width="${ largura_img -= 10}" height="${altura_img -= 10}" alt="troll faces">
+      `
+    }
+
+</script>

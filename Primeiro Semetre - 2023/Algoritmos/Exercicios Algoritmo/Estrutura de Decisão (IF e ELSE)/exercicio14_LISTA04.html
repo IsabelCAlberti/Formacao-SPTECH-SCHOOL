@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+
+<body>
+    <!-- 14. Agostinho é um taxista do Rio de Janeiro que deseja automatizar sua frota de táxis (Carrara Drivers). 
+    Faça um programa em HTML/JS que:
+
+a) Tenha um campo para nome do passageiro;   -->
+
+    Nome do Passageiro:
+    <input id="ipt_nomePassageiro">
+
+    <!-- b) Tenha um campo para a distância (em km) do local atual para o destino do passageiro; -->
+    Distancia em km que será percorrida:
+    <input id="ipt_distanciaKm">
+
+    <!-- c) Tenha um campo - que só aceita número - que recebe a informação da bandeira da corrida 
+(Este campo só pode aceitar números e valores entre 1 e 3;); -->
+    Bandeira atual da corrida:
+    <input type="number" id="ipt_bandeira" min="1" max="3">
+
+    <!-- d) Tenha um campo que recebe o horário da corrida (sistema de 24 horas e somente horas inteiras) Este campo só pode aceitar números e valores entre 0 e 23; -->
+    Horário da Corrida:
+    <input type="number" id="ipt_horarioCorrida" min="0" max="23">
+
+    <!-- e) Ao clicar em "Calcular corrida" -->
+    <button onclick="calculoCorrida()">Calcular Corrida</button>
+
+    <!-- f) Informe ao passageiro o valor final da corrida, com uma frase assim: -->
+    <div id="div_mensagemFinal"></div>
+
+    <!-- e.1) Siga a tabela abaixo para calcular o adicional por bandeira e horário:
+Obs: O valor nominal da corrida é de R$ 1,25 por km;
+
+Bandeira 1	
+0h - 6h	     5%
+7h - 12h	10%
+13h - 23h	15%
+
+Bandeira 2	
+0h - 6h	    10%
+7h - 12h	20%
+13h - 23h	30%
+
+Bandeira 3	
+0h -  6h	15%
+7h - 12h	30%
+13h - 23h	45% -->
+
+    <!-- Exemplos, para teste:
+
+Distância (km)	Bandeira	Horário	valorNormalCorrida
+10	                1	     14	    14,375
+20	2	15	32,5
+30	3	16	54,375
+40	1	17	57,5
+50	2	18	81,25
+60	3	19	108,75
+70	1	20	100,625
+80	2	21	130 -->
+
+</body>
+
+</html>
+<script>
+    function calculoCorrida() {
+        var distanciaKm = Number(ipt_distanciaKm.value);
+        var bandeira = Number(ipt_bandeira.value);
+        var horario = Number(ipt_horarioCorrida.value);
+        var valorNormalCorrida = distanciaKm * 1.25;
+        var valorFinalCorrida;
+
+        if (bandeira == 1) {
+
+            if (horario >= 0) {
+                valorFinalCorrida = valorNormalCorrida + (5 * valorNormalCorrida / 100)
+            }
+
+            if (horario >= 7) {
+                resultadoFinal = valorNormalCorrida + (10 * valorNormalCorrida / 100)
+            }
+
+            if (horario >= 13) {
+                resultadoFinal = valorNormalCorrida + (15 * valorNormalCorrida / 100)
+            }
+        }
+
+        if (bandeira == 2) {
+            if (horario >= 0) {
+                resultadoFinal = valorNormalCorrida + (10 * valorNormalCorrida / 100)
+            }
+
+            if (horario >= 7) {
+                resultadoFinal = valorNormalCorrida + (20 * valorNormalCorrida / 100)
+            }
+
+            if (horario >= 13) {
+                resultadoFinal = valorNormalCorrida + (30 * valorNormalCorrida / 100)
+            }
+        }
+
+        if (bandeira == 3) {
+            if (horario >= 0) {
+                resultadoFinal = valorNormalCorrida + (15 * valorNormalCorrida / 100)
+            }
+
+            if (horario >= 7) {
+                resultadoFinal = valorNormalCorrida + (30 * valorNormalCorrida / 100)
+            }
+
+            if (horario >= 13) {
+                resultadoFinal = valorNormalCorrida + (45 * valorNormalCorrida / 100)
+            }
+        }
+
+        div_teste.innerHTML = ` Olá ${ipt_nomePassageiro.value} Sua corrida, será na bandeira ${bandeira}, 
+percorrerá ${distanciaKm} km e o valorNormalCorridada corrida será de R$ ${resultadoFinal}`;
+
+    }
+</script>

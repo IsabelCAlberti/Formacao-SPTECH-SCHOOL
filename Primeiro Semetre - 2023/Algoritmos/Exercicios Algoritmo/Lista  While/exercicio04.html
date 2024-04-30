@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 4. Crie um programa o qual: 
+a) Ao clicar num botão "S2 Pares"... 
+b) Exiba, debaixo do botão, todos os números pares de 0 a 100, um embaixo do outro  -->
+
+    <button onclick="numeros_pares()">S2 Pares</button>
+    <div id="div_numeros"></div>
+</body>
+
+</html>
+<script>
+    function numeros_pares() {
+        var numero = 0;
+        while (numero <= 100) {
+            div_numeros.innerHTML += numero + "<br>";
+            numero += 2;
+        }
+    }
+</script>

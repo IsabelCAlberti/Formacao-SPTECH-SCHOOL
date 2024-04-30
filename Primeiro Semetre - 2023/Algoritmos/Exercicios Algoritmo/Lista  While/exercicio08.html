@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 8. Crie um programa o qual: 
+a) Receba um número (tem que estar entre 0 e 200);
+b) Ter um botão chamado "Viva o 7!" 
+c) Ao clicar nesse botão, devem aparecer todos os múltiplos de 7 entre 0 e o número informado em a) 
+c) ATENÇÃO! Use a técnica de dedução de múltiplos por uso do resto da divisão e não usando a técnica de incrementar em 7. Para saber se um número é múltiplo de 7, basta descobrir se o resto da divisão dele por 7 é 0.  -->
+
+Digite um numero:
+<input type="number" min="0" max="200" id="ipt_numero">
+
+<button onclick="multiplo_de7()">Viva o 7!</button>
+<br>
+<span id="span_vazia"></span>
+
+</body>
+</html>
+<script>
+    function multiplo_de7() {
+        span_vazia.innerHTML = "";
+        
+        var numero_do_usuario = Number(ipt_numero.value)
+        var cont_num_mult7 = 0;
+
+        while (cont_num_mult7 <= numero_do_usuario) {
+            if (cont_num_mult7 % 7 == 0) {
+                span_vazia.innerHTML += `${cont_num_mult7} <br>`
+            }
+            cont_num_mult7 += 1;
+        }
+    }
+</script>

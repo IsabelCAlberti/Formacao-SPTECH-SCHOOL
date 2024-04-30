@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 22. Refaça o programa anterior de tal forma de que, somente nos meses que ganhou o "bônus", apareça uma imagem de uma estrela bem pequena (reduza a imagem para ficar quase do tamanho da fonte) à direita do valor acumulado.  -->
+    Quantos depósitos fez no banco?
+    <br>
+    <input id="ipt_deposito">
+    <br>
+    Qual valor do depósito?
+    <br>
+    <input id="ipt_valor_deposito">
+    <br>
+    <br>
+    <button onclick="valor_mesAmes()">Acompanhar grana</button>
+    <br>
+    <span id="valor_mensagem"></span>
+</body>
+
+</html>
+<script>
+    function valor_mesAmes() {
+        var qtd_depositos = Number(ipt_deposito.value);
+        var valor_deposito_inicial = Number(ipt_valor_deposito.value);
+        var valor_deposito = Number(ipt_valor_deposito.value);
+
+        var aparecendo_estrelas = `<img style="width: 11px; height: 10px;" src="https://e7.pngegg.com/pngimages/259/723/png-clipart-red-star-red-star.png" alt="estrela vermelha e dourada">`
+
+        valor_mensagem.innerHTML = "";
+
+        for (var mes = 1; mes <= qtd_depositos; mes++) {
+            if (mes % 3 == 0) {
+                valor_deposito += (1 * valor_deposito) / 100
+                valor_mensagem.innerHTML += `${mes}º Mês: ${valor_deposito} ${aparecendo_estrelas} <br> \n`;
+            } else {
+                valor_mensagem.innerHTML += `${mes}º Mês: ${valor_deposito}<br>`;
+            }
+            valor_deposito = valor_deposito + valor_deposito_inicial;
+        }
+    }
+</script>

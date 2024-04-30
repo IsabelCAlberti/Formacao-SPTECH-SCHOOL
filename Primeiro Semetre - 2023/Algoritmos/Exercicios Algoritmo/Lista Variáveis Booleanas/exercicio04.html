@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 4. Crie um programa o qual: 
+
+OBS: Use variáveis booleanas 
+
+a) Receba a idade da pessoa e informe os estágios pelo qual essa pessoa já passou da seguinte forma: 
+
+    Já passou pela infância: true/false 
+
+    Já passou pela adolescência: true/false 
+
+    Já é um idoso: true/false 
+
+    TOTAL DE PONTOS: 99 
+
+b) Sendo que:  
+
+    A infância é até os 12 anos; 
+
+    A adolescência até os 18 anos; 
+
+    O idoso é a partir dos 65 anos;  
+
+c) Para a pontuação, use:  
+
+    Se já passou pela infância, ganha 10 pontos; 
+
+    Se já passou pela adolescência, ganha 20 pontos; 
+
+    Se já é um idoso, ganha 50 pontos;  -->
+  Informe a idade do aluno:
+  <input id="ipt_idade" />
+  <br>
+  <button onclick="verificar()">Verificar</button>
+  <div id="div_resultado"></div>
+</body>
+
+</html>
+<script>
+  function verificar() {
+
+    var idade = Number(ipt_idade.value);
+    var score = 0;
+
+    var infancia = idade >= 12;
+    var adolescencia = idade >= 18;
+    var idoso = idade >= 65;
+
+    if (infancia) {
+      score += 10;
+    } else if (adolescencia) {
+      score += 20;
+    } else if (idoso) {
+      score += 50;
+    }
+    div_resultado.innerHTML = `TOTAL DE PONTOS: ${score}`;
+  }
+</script>

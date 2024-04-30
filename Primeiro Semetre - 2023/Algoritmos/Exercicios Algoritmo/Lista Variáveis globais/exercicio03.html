@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 3) Tio Patinhas está ensinando seus netos a guardar dinheiro; Ajude-o criando um programa em HTML/JS o qual:
+a) Exiba na tela, logo de início, na cor azul:
+Total guardado no cofrinho: R$0
+Depósitos efetuados: 0
+Retiradas efetuadas: 0
+
+b) Ao clicar num botão "Depositar 0,50", o valor depositado aumente em R$0,50 e a quantidade de depósitos aumente em 1. Atualize essas informações na tela;
+c) Ao clicar num botão "Depositar 2,00", o valor depositado aumente em R$2,00 e a quantidade de depósitos aumente em 1. Atualize essas informações na tela;
+d) Ao clicar num botão "Retirar 0,50" o valor depositado é diminuído em R$0,50 e a quantidade de retiradas aumenta em 1. Atualize essas informações na tela;
+e) Ao clicar num botão "Retirar" o valor depositado é diminuído de acordo com o campo "Valor", disponível na tela. -->
+
+
+
+    <p style="color: blue;"><b>Total guardado no cofrinho:</b> R$<span id="span_numero"> 0</span><br>
+        <b>Depósitos efetuados:</b> <span id="span_numero_deposito">0</span><br>
+        <b>Retiradas efetuadas:</b><span id="span_numero_retirada"> 0</span>
+    </p>
+
+    <button onclick="btn_depositar050()">Depositar R$ 0,50</button>
+    <button onclick="btn_depositar02()">Depositar R$ 2,00</button>
+    <button onclick="btn_retirar050()">Retirar R$ 0,50</button>
+    <button onclick="btn_retirar()">Retirar</button>
+
+</body>
+
+</html>
+
+<script>
+    var cinquenta_centavos = Number(0.50);
+    var dois_reais = Number(2.00);
+    var cont_depositos = 1;
+    var cont_retirada = 1;
+
+    function btn_depositar050() {
+        var numero = Number(span_numero.innerHTML);
+        var aumentando = numero + cinquenta_centavos;
+        span_numero.innerHTML = aumentando;
+        span_numero_deposito.innerHTML = cont_depositos++;
+    }
+
+    function btn_depositar02() {
+        var numero = Number(span_numero.innerHTML);
+        var aumentando = numero + dois_reais;
+        span_numero.innerHTML = aumentando;
+        span_numero_deposito.innerHTML = cont_depositos++;
+    }
+
+    function btn_retirar050() {
+        var numero = Number(span_numero.innerHTML);
+        var saque = numero - cinquenta_centavos;
+        span_numero.innerHTML = saque;
+        span_numero_retirada.innerHTML = cont_retirada++;
+    }
+
+    function btn_retirar() {
+        var numero = Number(span_numero.innerHTML);
+        var saque = numero - numero;
+        span_numero.innerHTML = saque;
+    }
+</script>

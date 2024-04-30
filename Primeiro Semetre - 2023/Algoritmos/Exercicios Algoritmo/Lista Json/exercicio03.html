@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 3. Crie um programa que simule o uso de uma conta Poupança de banco do usuário. 
+
+Ela deve ter as seguintes informações na tela: 
+
+    Saldo: R$ 0.00 
+
+    Depósitos: 0 
+
+    Saques: 0 
+
+Abaixo dessas informações, deve haver os botões: "Depositar 100" e "Sacar 20". 
+
+Ao clicar no primeiro botão, o saldo na tela atualiza aumentando em 100 e o número de depósitos aumenta em 1. 
+
+Ao clicar no segundo botão, o saldo na tela atualiza reduzindo em 20 e o número de saques aumenta em 1. 
+
+É possível que o saldo fique negativo (azar do usuário ser gastador, né?).  -->
+
+
+       Saldo: R$<span id="span_valor_saldo"> 0.00 </span>
+       Depósitos: <span id="span_qtd_depositos"> 0 </span>
+       Saques: <span id="span_qtd_saques"> 0 </span>
+    <br>
+    <br>
+    <button onclick="conta_bancaria_aumentar()">Depositar 100</buttonid=> 
+    <button onclick="conta_bancaria_reduzir()">Sacar 20</button>
+
+</body>
+
+</html>
+<script>
+    span_valor_saldo.innerHTML = "";
+    span_qtd_depositos.innerHTML = "";
+    span_qtd_saques.innerHTML = "";
+
+    var info_bancarias = {
+        Saldo: 0,
+        Depositos: 0,
+        Saques: 0,
+    }
+
+    function conta_bancaria_aumentar() {
+            info_bancarias.Saldo += 100
+            info_bancarias.Depositos += 1;
+
+            span_valor_saldo.innerHTML = info_bancarias.Saldo
+            span_qtd_depositos.innerHTML = info_bancarias.Depositos;
+            console.log("aqui if")
+     }
+
+     function conta_bancaria_reduzir(){
+        info_bancarias.Saques += 1;
+            info_bancarias.Saldo -= 20;
+
+            span_qtd_saques.innerHTML = info_bancarias.Saques;
+            span_valor_saldo.innerHTML = info_bancarias.Saldo;
+            console.log(info_bancarias.Saques)
+     }
+</script>

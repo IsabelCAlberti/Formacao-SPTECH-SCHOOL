@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Digite a entrada x0 (retangulo01)
+    <input id="ipt_x0">
+    <br>
+    Digite a entrada x1 (retangulo01)
+    <input id="ipt_x1">
+    <br>
+    Digite a entrada y0 (retangulo01)
+    <input id="ipt_y0">
+    <br>
+    Digite a entrada y1 (retangulo01)
+    <input id="ipt_y1">
+    <br>
+    <br>
+    Digite a entrada xx0 (retangulo02)
+    <input id="ipt_xx0">
+    <br>
+    Digite a entrada xx1 (retangulo02)
+    <input id="ipt_xx1">
+    <br>
+    Digite a entrada yy0 (retangulo02)
+    <input id="ipt_yy0">
+    <br>
+    Digite a entrada yy1 (retangulo02)
+    <input id="ipt_yy1">
+    <br>
+    <br>
+
+    <button onclick="verificarColisao()"> Verificar Colisão </button>
+
+    <div id="colideOuNao"></div>
+
+</body>
+
+</html>
+<script>
+    function verificarColisao() {
+        var valorX0 = Number(ipt_x0.value);
+        var valorX1 = Number(ipt_x1.value);
+        var valorY0 = Number(ipt_y0.value);
+        var valorY1 = Number(ipt_y1.value);
+
+        var valorXx0 = Number(ipt_xx0.value);
+        var valorXx1 = Number(ipt_xx1.value);
+        var valorYy0 = Number(ipt_yy0.value);
+        var valorYy1 = Number(ipt_yy1.value);
+
+        if (valorX0 < valorX1 && valorY0 < valorY1 && valorXx0 < valorXx1 && valorYy0 < valorYy1) {
+            if (valorX0 == valorX1 && valorY0 == valorY1 && valorXx0 == valorXx1 && valorYy0 == valorYy1) {
+                colideOuNao.innerHTML = `<br>0`
+            }else{
+                colideOuNao.innerHTML = `<br>1`
+            }
+        }else{
+            colideOuNao.innerHTML = `<br>1`
+        }
+
+    }
+</script>

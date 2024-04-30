@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio03 - Lista 02</title>
+</head>
+
+<body>
+
+    Digite um número: <input id="input_numero">
+
+    <button onclick="calculoTabuada()"> Ver Tabuada </button>
+
+    <div id="div_exibirTextoFinal"> </div>
+
+</body>
+
+</html>
+<script>
+
+    function calculoTabuada() {
+        var numeroUsuario = Number(input_numero.value)
+        div_exibirTextoFinal.innerHTML =
+            ` ${numeroUsuario} X 1 = ${numeroUsuario * 1}  <br>
+        ${numeroUsuario} x 2 = ${numeroUsuario * 2} <br>
+        ${numeroUsuario} x 3 = ${numeroUsuario * 3} <br>
+        ${numeroUsuario} x 4 = ${numeroUsuario * 4} <br>
+        ${numeroUsuario} x 5 = ${numeroUsuario * 5} <br>
+        ${numeroUsuario} x 6 = ${numeroUsuario * 6} <br>
+        ${numeroUsuario} x 7 = ${numeroUsuario * 7} <br>
+        ${numeroUsuario} x 8 = ${numeroUsuario * 8}<br>
+        ${numeroUsuario} x 9 = ${numeroUsuario * 9}<br>`;
+    }
+
+</script>

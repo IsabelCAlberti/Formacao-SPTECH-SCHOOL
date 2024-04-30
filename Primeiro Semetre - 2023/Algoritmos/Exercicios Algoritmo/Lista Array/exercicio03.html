@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 3. Crie um programa onde o usuário vá cadastrando os bairros para onde já morou. 
+        Ele digita o nome do lugar e vai clicar em "Cadastrar bairro". 
+
+Deve haver um outro campo, onde ele digita apenas um número, indicando o local onde morou, 
+a partir do número 1 (porque os usuários comuns contam as coisas a partir do 1) 
+e clica em "Relembrar moradia". 
+Se ele informar 1, exiba o primeiro bairro cadastrado e assim por diante. 
+
+Porém, se ele informar um número maior do que a quantidade de bairros, exiba: "Você ainda não morou num Xº bairro!"  -->
+
+    <input type="text" placeholder="Bairro" id="ipt_bairro_usuario">
+    <button onclick="registrar()">Cadastar Bairro</button>
+    <br>
+    <br>
+    <input type="text" placeholder="Numero" id="ipt_numero" min="1">
+    <button onclick="relembrando()">Relembrar Moradia</button>
+    <br>
+    <span id="span_vazia"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    var listaBairros = [];
+
+    function registrar() {
+        var bairrosUsuario = ipt_bairro_usuario.value;
+        listaBairros.push(bairrosUsuario)
+    }
+
+    function relembrando() {
+    var bairrosNumero = ipt_numero.value;
+
+    if ( bairrosNumero > listaBairros.length) {
+        span_vazia.innerHTML = "Você ainda não morou neste bairro!"
+            } else {
+                span_vazia.innerHTML = `${listaBairros[bairrosNumero-1]}`
+            }
+        }
+
+</script>

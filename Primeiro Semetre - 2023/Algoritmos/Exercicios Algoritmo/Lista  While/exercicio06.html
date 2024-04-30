@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 6. Crie um programa o qual: 
+a) Pergunte o nome da pessoa que o usuário mais ama na vida;
+b) Pergunte o quanto o usuário a ama (um número inteiro);
+c) Ao clicar num botão "Expressar amor", devem aparecer, abaixo dele, N vezes (conforme o valor em b)) a frase indicada em a), como neste exemplo (considerando o nome "Lady Gaga" e que ama "3") 
+
+ 1 - Lady Gaga, eu te amo! Sempre lembre disso! 
+
+ 2 - Lady Gaga, eu te amo! Sempre lembre disso! 
+
+ 3 - Lady Gaga, eu te amo! Sempre lembre disso!  -->
+
+    Nome da Pessoa Amada:
+    <input type="text" id="ipt_nome_amada">
+    Quanto você a/o ama?
+    <input type="number" min="1" max="60" id="ipt_qdt_amor">
+
+    <button onclick="meu_grande_amor()">Expressar Amor!</button>
+    <div id="div_meu_amor"></div>
+</body>
+
+</html>
+<script>
+    function meu_grande_amor() {
+
+        var nome_amor = ipt_nome_amada.value;
+        var qtd_amor = Number(ipt_qdt_amor.value);
+
+        var numero_amor = 0;
+        var cont = 0;
+
+        while (numero_amor <= qtd_amor) {
+            div_meu_amor.innerHTML += `${cont} ${nome_amor}, eu te amo! Sempre lembre disso. <br>`
+            cont += 1;
+            numero_amor += 1;
+        }
+    }
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+
+<body>
+
+    Quantidade de passagens:
+    <input id="ipt_passagens">
+
+    <button onclick="precoPassagem()">Comprar</button>
+
+    <div id="div_mensagemFinal"></div>
+
+</body>
+
+</html>
+<script>
+    function precoPassagem() {
+        var valorPassagem = 4.40
+        var qtdPassagens = Number(ipt_passagens.value);
+        div_mensagemFinal.innerHTML = `Total a pagar\n`
+
+        if (qtdPassagens >= 8 && qtdPassagens <= 50) {
+            if (qtdPassagens <= 19) {
+                valorPassagem = valorPassagem - (valorPassagem * 3) / 100
+                div_mensagemFinal.innerHTML += valorPassagem *qtdPassagens
+            }
+            else if (qtdPassagens <= 49) {
+                valorPassagem = valorPassagem - (valorPassagem * 5) / 100
+                div_mensagemFinal.innerHTML += valorPassagem *qtdPassagens
+            }
+            else if (qtdPassagens == 50) {
+                valorPassagem = valorPassagem - (valorPassagem * 7) / 100
+                div_mensagemFinal.innerHTML += valorPassagem *qtdPassagens
+            }
+        } else {
+            alert("Quantidade inválida para a Fidelidade!");
+        }
+    }
+</script>

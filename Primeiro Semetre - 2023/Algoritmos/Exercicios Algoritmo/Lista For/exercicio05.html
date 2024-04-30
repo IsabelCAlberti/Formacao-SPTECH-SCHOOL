@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 18 - Lista For</title>
+</head>
+
+<body>
+    <!-- 18. Crie um programa no qual: 
+
+a) O usuário informe quantas "Coca-Cola" ele acha que já bebeu na vida 
+
+b) Ao clicar em "Ver a quantidade", devem aparecer na tela N garrafinhas (ou latas, se preferir) de "Coca-Cola" uma ao lado da outra, conforme a quantidade informada em a) 
+
+c) Para saber se seu programa está correto, teste algo assim: informe 20 e clique. Depois informe só 3 e clique novamente. Veja se vão aparecer só 3 garrafinhas (ou latas) na tela.  -->
+
+    Quantas Coca-Cola acha que bebeu em toda sua vida?
+    <input id="ipt_qtd_refri">
+    <br>
+    <br>
+    <button onclick="verificar_qtd_refris()">Ver a Quantidade</button>
+    <br>
+    <br>
+    <div id="img_cocaCola"></div>
+
+
+</body>
+
+</html>
+<script>
+
+    function verificar_qtd_refris() {
+        var qtd_refri_coca = Number(ipt_qtd_refri.value);
+        var aparecendo_cocas = `<img style="width: 110px; height: 100px;" src="https://images.tcdn.com.br/img/img_prod/686651/coca_cola_250ml_35990607_1_5cccbfcfc6f0c6b62420ed64fc551cc4.jpg" alt="Coca-Cola garrafa">`
+        img_cocaCola.innerHTML = "";
+
+        for (var cont = 0; cont < qtd_refri_coca; cont++) {
+            img_cocaCola.innerHTML += aparecendo_cocas;
+        }
+    }
+</script>

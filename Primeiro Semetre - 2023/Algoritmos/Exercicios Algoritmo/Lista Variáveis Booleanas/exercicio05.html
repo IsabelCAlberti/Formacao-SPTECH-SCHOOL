@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 5. Crie um programa o qual: 
+
+OBS: Use variáveis booleanas 
+
+a) Solicite o peso e a altura do usuário; 
+
+b) Ao clicar em “Verificar IMC”, faça:  
+
+    b1) Caso os campos estejam vazios, emita um alerta solicitando as entradas e encerre; 
+
+    b2) Caso todos os campos estejam preenchidos, prossiga; 
+
+c) Valide se a altura está em centímetros ou metros, onde:  
+
+    c1) Caso a altura esteja em centímetros, converta-a para metros e prossiga; 
+
+    c2) Caso a altura já esteja em metros, prossiga; 
+
+d) Calcule o IMC do usuário e exiba na tela uma frase de acordo com o sse de acordo com o seu IMC:  
+
+    "Abaixo do Peso" em azul, caso esteja com IMC menor que 18.5; 
+
+    "Peso Ideal" em verde, caso esteja com IMC entre 18.5 e 24.9; 
+
+    "Excesso de Peso" em amarelo, caso IMC seja maior que 24.9 e até 30; 
+
+    "Obesidade" em laranja, caso IMC seja maior que 30 e até 35; 
+
+    "Obesidade Extrema" em vermelho, caso o IMC seja maior que 35; 
+
+OBS2: A fórmula para calcular o IMC é “peso / (altura * altura)”, como: 
+
+    IMC = 70 / (1.75 * 1.75)     ->     resulta em: 22.8571428571 
+
+OBS3: Para converter centímetros em metros, divida os centímetros por 100.  -->
+
+    <h1>Informe seu peso e altura</h1>
+    <br><br>
+    Informe seu peso:
+    <input id="input_peso" />
+    <br><br>
+    Informe sua altura:
+    <input id="input_altura" />
+    <br><br>
+    <button style="border: none; padding: 5px; background-color: aquamarine ;" onclick="calcular()">Calcular
+        IMC</button>
+    <br>
+    <span id="span_resultado"></span>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var peso = input_peso.value;
+        var altura = input_altura.value;
+
+        var imc = peso / (altura * altura);
+
+        var abaixoDoPeso = imc < 18.5;
+        var pesoIdeal = imc <= 24.9;
+        var acimaDoPeso =  imc <= 30;
+        var obesidade = imc <= 35;
+        var obesidadeMorbida = imc > 35;
+
+        if (peso.length == "" || altura.length == "") {
+            alert("Verifique se todos os campos estão preenchidos!")
+        } else {
+            if (altura > 2.72) {     // humano mais alto ja registrado!
+                altura /= 100;
+            }
+            else if (abaixoDoPeso) {
+                span_resultado.innerHTML = `<p style="color:blue"><strong>Abaixo do Peso</strong></p> ${imc.toFixed(2)}`;
+            } else if (pesoIdeal) {
+                span_resultado.innerHTML = `<p style="color:green"><strong>Peso Ideal</strong></p> ${imc.toFixed(2)}`;
+            } else if (acimaDoPeso) {
+                span_resultado.innerHTML = `<p style="color:yellow"><strong>Excesso de Peso</strong></p> ${imc.toFixed(2)}`;
+            } else if (obesidade) {
+                span_resultado.innerHTML = `<p style="color:orange"><strong>Obesidade</strong></p> ${imc.toFixed(2)}`;
+            } else if (obesidadeMorbida) {
+                span_resultado.innerHTML = `<p style="color:red"><strong>Obesidade Extrema</strong></p> ${imc.toFixed(2)}`;
+            }
+        }
+    }
+</script>

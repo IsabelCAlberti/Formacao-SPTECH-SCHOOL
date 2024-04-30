@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 01 - Lista 04</title>
+  </head>
+
+  <body>
+    Latinhas de refrigerante tomadas por dia:
+    <input type="text" id="input_refriDia" />
+    <button onclick="calculoQtdRefri()">Quantos Refris?</button>
+    <div id="div_mensagemFinal"></div>
+  </body>
+</html>
+
+<script>
+  function calculoQtdRefri() {
+    var refrigeranteDia = Number(input_refriDia.value);
+    var qtdRefriAno = refrigeranteDia * 365;
+    var exibicaoMgsFinal = `Você toma ${qtdRefriAno} latinhas de refrigente por ano`;
+
+    if (qtdRefriAno > 500) {
+      div_mensagemFinal.innerHTML =
+        exibicaoMgsFinal + "\nCuidado com a Diabetes!";
+    }
+  }
+</script>

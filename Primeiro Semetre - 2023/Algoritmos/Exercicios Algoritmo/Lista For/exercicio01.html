@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 15 - Lista For </title>
+</head>
+
+<body>
+    <!-- No filme clássico "Ghost, do outra lado da vida", o protagonista, para atazanar a vida da médium canta a seguinte canção... 
+
+    1 elefante incomoda muita gente! 
+    
+    2 elefantes, incomodam, incomodam, muito mais! 
+    
+    1 elefante incomoda muita gente! 
+    
+    3 elefantes, incomodam, incomodam, incomodam, muito mais! 
+    
+    1 elefante incomoda muita gente! 
+    
+    4 elefantes, incomodam, incomodam, incomodam, incomodam, muito mais! 
+    
+    ... e assim por diante 
+    
+    Crie um programa o qual: 
+    
+    a) Solicite ao usuário a quantidade elefantes;
+    
+    b) Ao clicar em "Atazanar a médium", exiba sempre o trecho da canção de 
+    1 elefante, seguido do trecho com 2 elefantes e depois 3... até a quantidade de elefantes indicado em a). Note que a palavra "incomodam" repete-se conforme essa mesma quantidade. 
+    
+    Por exemplo, o se o usuário informar 4 em a), devem aparecer 3 estrofes, como no enunciado da questão, de "2 elefantes" até "4 elefantes"  -->
+
+    <p>Quantidade de Elefantes:</p>
+    <br>
+    <input id="ipt_qtd_elefantes">
+    <br>
+    <button onclick="atazanar()">Atazanar a Médium...</button>
+    <br>
+    <div id="mgs_elefantes"></div>
+
+</body>
+
+</html>
+<script>
+    function atazanar() {
+        var qtd_elefantes = Number(ipt_qtd_elefantes.value);
+        var cont_texto = 1;
+        var mudanca_texto = `incomodam,\n`
+
+        for (var cont = 2; cont <= qtd_elefantes; cont++) {
+
+            while(cont > cont_texto){
+                mudanca_texto += "incomodam,\n"
+                cont_texto++;
+            }
+            mgs_elefantes.innerHTML += `1 elefante incomoda muita gente! <br> `
+            mgs_elefantes.innerHTML += `${cont} elefantes ${mudanca_texto} muita gente!  <br><br>`
+        }
+    }
+            // opção 02 - usando js
+            // if ((cont > 1 )) {
+            //     mgs_elefantes.innerHTML = `${cont} elefantes ${mudanca_texto.repeat(cont)} muita gente!`
+            // } else if (cont == 1) {
+            //     mgs_elefantes.innerHTML = `${cont} elefante incomoda muita gente!`
+            // }
+    
+</script>

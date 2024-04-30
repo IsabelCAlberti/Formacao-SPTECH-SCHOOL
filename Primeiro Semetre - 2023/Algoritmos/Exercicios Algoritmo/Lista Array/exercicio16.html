@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 16 Crie um programa o qual: 
+
+a) Tenha um campo "Digite um número qualquer". 
+
+b) Tenha um botão "Analisar histórico". Ao clicar nele, o número é cadastrado em algum lugar e, em seguida, deve aparecer um histórico dos números cadastrados,
+ bem como o maior 
+ e o menor, como no exemplo a seguir: 
+
+   1º Número: 15 
+
+   2º Número: 22 
+
+   3º Número: 19 
+
+   4º Número: 5 
+
+   Maior: 22 
+
+   Menor: 5  -->
+
+    <label> Digite um Numero: </label> <input type="text" id="ipt_NumeroDigitado">
+    <button onclick="analisarNumeros()">Analisar Histórico</button>
+
+    <span id="spanMensagem"></span>
+
+</body>
+
+</html>
+<script>
+
+    var listaNumeros = [];
+    spanMensagem.innerHTML = ""
+
+    function analisarNumeros() {
+        var numeroDigitados = ipt_NumeroDigitado.value;
+        listaNumeros.push(numeroDigitados)
+
+        for (var index = 0; index < listaNumeros.length; index++) {
+            var numeroAtual = listaNumeros[index]
+            var numMaior = listaNumeros[0]
+            var numMenor = listaNumeros[0]
+
+            if (numMaior < listaNumeros[index]) {
+                numMaior = listaNumeros[index]
+            } else if (numMenor > listaNumeros[index]) {
+                numMenor = listaNumeros[index]
+            }
+            spanMensagem.innerHTML +=
+            `<br><br> ${index} º Numero: ${numeroAtual} <br>`
+        }
+
+        spanMensagem.innerHTML +=
+            `
+            Maior: ${numMaior} <br>
+            Menor: ${numMenor}<br><br>`
+    }
+</script>

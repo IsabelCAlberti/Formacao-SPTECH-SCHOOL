@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02 - Lista Json</title>
+</head>
+<body>
+    <!-- 2. Crie um programa no qual informe os nomes dos times, quantas vitórias, quantos empates e quantas derrotas 2 times de futebol possuem no campeonato. Após clicar num botão "Comparar campanhas", exiba uma frase como esta: 
+
+      O time A terminou o campeonato com AX pontos 
+
+      O time B terminou o campeonato com BX pontos 
+
+Onde o X de cada time é calculado assim: 
+
+Vitória: 3 pontos 
+Empate: 1 ponto 
+Derrota: 0 pontos  -->
+
+Vitórias Time 01:
+<input id="ipt_vitoria_time01">
+
+Empates Time 01:
+<input id="ipt_empate_time01">
+
+Derrotas Time 01:
+<input id="ipt_derrota_time01">
+<br>
+<br>
+Vitórias Time 02:
+<input id="ipt_vitoria_time02">
+
+Empates Time 02:
+<input id="ipt_empate_time02">
+
+Derrotas Time 02:
+<input id="ipt_derrota_time02">
+
+<br>
+<br>
+<button onclick="campanha()">Comparar Campanhas</button>
+<div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+    div_mensagem.innerHTML += "";
+   function campanha() {
+       var vitoria_time01 = Number(ipt_vitoria_time01.value);
+       var empate_time01 = Number(ipt_empate_time01.value);
+       var derrota_time01 = Number(ipt_derrota_time01.value);
+
+       var vitoria_time02 = Number(ipt_vitoria_time02.value);
+       var empate_time02 = Number(ipt_empate_time02.value);
+       var derrota_time02 = Number(ipt_derrota_time02.value);
+
+       var time = {
+           vitoria: 3,
+           derrota: 0,
+           empate: 1,
+       }
+       div_mensagem.innerHTML += `O time <b>A</b> terminou o campeonato com <b>${(time.vitoria*vitoria_time01) + (time.empate*empate_time01) + time.derrota} pontos</b>, e o time <b>B</b> terminou o campeonato comm <b>${(time.vitoria*vitoria_time02) + (time.empate*empate_time02) + time.derrota}pontos</b> `
+   }
+</script>

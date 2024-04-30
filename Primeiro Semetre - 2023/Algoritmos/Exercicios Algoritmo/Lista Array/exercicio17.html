@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14 | List Array</title>
+</head>
+
+<body>
+
+
+    <div id="parte1" style="display: block;">
+        <h1 style="color:brown; text-align: center">Análise de Performace de Alunos - Pesquisa</h1>
+
+        <label style="color:brown">Entre com o Nome do aluno </label>
+        <input style="margin-right: 2%; margin-left: 2%; border-color: brown;" type="text" id="ipt_NomeAluno">
+        <br><br>
+
+        <label style="color:brown">Entre com a Nota do aluno </label>
+        <input style="border-color: brown;" type="text" id="ipt_NotaAluno">
+        <br><br>
+
+        <button onclick="registrarNomes()"
+            style=" margin-bottom: 2%; border-color: brown; color: brown; padding: 8px; background-color: rgb(255, 255, 255); margin-right: 5%;">Registrar</button>
+        <button onclick="analisar()"
+            style=" border-color: brown; color: brown; padding: 8px; background-color: rgb(255, 255, 255);">Analisar</button>
+        <br><br>
+
+        <div id="divMensagem"></div>
+    </div>
+    <!-------------- Parte 2 ---------------->
+
+    <div id="parte2" style="display:none;">
+        <h1 style="color:brown; text-align: center"> Anáise de Pergormance de Alunos - Pesquisa </h1>
+        <label style="color:brown">Entre com o intervalo de Notas </label>
+        <input style="margin-right: 2%; margin-left: 2%; border-color: brown;" type="text" id="ipt_Notainicio"
+            placeholder="De">
+        <input style="margin-right: 2%; margin-left: 2%; border-color: brown;" type="text" id="ipt_Notafinal"
+            placeholder="Até">
+        <br><br>
+        <button onclick="analisar()"
+         style=" border-color: brown; color: brown; padding: 8px; background-color: rgb(255, 255, 255);">Pesquisar</button>
+        <br><br>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    listaNomesRegistrados = [];
+    listaNotasRegistradas = [];
+
+    function registrarNomes() {
+
+        var nomeAluno = ipt_NomeAluno.value;
+        var notaAluno = ipt_NotaAluno.value;
+
+        divMensagem.innerHTML = "";
+
+        if (nomeAluno == undefined || nomeAluno == "") {
+            alert("Preencha o campo Nome do Aluno")
+            return false
+        } else if (notaAluno == undefined || notaAluno == "") {
+            alert("Preencha o campo Nota do Aluno")
+            return false
+        } else if (notaAluno < 0 || notaAluno > 10) {
+            alert("Nota deve ser estar entre 0 e 10")
+            return false
+        } else {
+            listaNomesRegistrados.push(nomeAluno);
+            listaNotasRegistradas.push(notaAluno);
+
+            for (let index = listaNomesRegistrados.length - 1; index >= 0; index--) {
+                var nomeRegistrado = listaNomesRegistrados[index];
+                var notaRegistrada = listaNotasRegistradas[index];
+                divMensagem.innerHTML += `${nomeRegistrado}<br> <br>`
+                divMensagem.innerHTML += `${notaRegistrada}<br> <br>`
+            }
+        }
+    }
+
+    function analisar() {
+        divMensagem.innerHTML = "";
+        parte1.style.display = "none";
+        parte2.style.display = "block";
+
+        var inicio = ipt_Notainicio.value;
+        var final = ipt_Notafinal.value;
+
+        var nomeAluno = ipt_NomeAluno.value;
+        var notaAluno = ipt_NotaAluno.value;
+
+        if (inicio == undefined || inicio == "") {
+            alert("Preencha o campo DE dcorretamente")
+            return false
+        } else if (final == undefined || final == "") {
+            alert("Preencha o campo ATÉ corretamente")
+            return false
+        } else if (inicio < 0 || inicio > 10) {
+            alert("O início deve ser estar entre 0 e 10")
+            return false
+        } else if (final < 0 || final > 10) {
+            alert("O Final deve ser estar entre 0 e 10")
+            return false
+        } else if (inicio <= final) {
+
+            listaNomesRegistrados.push(nomeAluno);
+            listaNotasRegistradas.push(notaAluno);
+           
+            divMensagem.innerHTML += `Abaixo da relação de alunos: ${listaNomesRegistrados} <br><br>
+            Total de alunos registrados: 
+            Total de alunos listado: 999
+    Maior Nota = 99,9 
+    Menor Nota = 99,9 
+    Média da Nota = 99,9`
+        }
+    }
+
+</script>

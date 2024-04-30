@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 06 </title>
+</head>
+<body>
+    Digite um Número: <input type="text" id="input_numeroUm">
+    <br>
+    Digite outro Número : <input type="text" id="input_numeroDois">
+    <br>
+    <br>
+    
+    <button onclick="multiplicar()"> Multiplicar </button>
+    <button onclick="dividir()"> Dividir </button>
+    <button onclick="subtrair()"> Subtrair </button>
+    <button onclick="somar()"> Somar </button>
+   
+
+</body>
+</html>
+
+<script>
+
+function multiplicar(){
+    var primeiroNumero = Number(input_numeroUm.value)
+    var segundoNumero = Number(input_numeroDois.value)
+    
+    alert(primeiroNumero + " multiplicado por" + segundoNumero + "\né: " + (primeiroNumero*segundoNumero))
+}
+
+function dividir(){
+    var primeiroNumero = Number(input_numeroUm.value)
+    var segundoNumero = Number(input_numeroDois.value)
+    alert(primeiroNumero + " dividido por" + segundoNumero + "\né: " + (primeiroNumero/segundoNumero) )
+}
+
+function subtrair(){
+    var primeiroNumero = Number(input_numeroUm.value)
+    var segundoNumero = Number(input_numeroDois.value)
+    alert(primeiroNumero + " subtraido por" + segundoNumero + "\né: " + (primeiroNumero-segundoNumero))
+}
+
+function somar(){
+    var primeiroNumero = Number(input_numeroUm.value)
+    var segundoNumero = Number(input_numeroDois.value)
+    alert(primeiroNumero + " somado por " + segundoNumero + "\né: " + (primeiroNumero+segundoNumero))
+}
+
+</script>

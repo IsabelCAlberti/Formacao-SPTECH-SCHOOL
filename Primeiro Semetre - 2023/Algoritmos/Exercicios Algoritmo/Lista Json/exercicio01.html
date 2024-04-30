@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+
+<body>
+    <!--  Crie um programa no qual informe quantas vitórias, quantos empates e quantas derrotas um time de futebol possui no campeonato. Após clicar num botão "Analisar campanha", exiba uma frase como esta: 
+      O time terminou o campeonato com X pontos 
+Onde X é calculado assim: 
+Vitória: 3 pontos 
+Empate: 1 ponto 
+Derrota: 0 pontos  -->
+
+    Vitórias:
+    <input id="ipt_vitoria">
+
+    Empates:
+    <input id="ipt_empate">
+
+    Derrotas:
+    <input id="ipt_derrota">
+
+    <button onclick="campanha()">Analisar Campanha</button>
+<div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+     div_mensagem.innerHTML += "";
+    function campanha() {
+        var time = {
+            vitoria: Number(ipt_vitoria.value)* 3,
+            derrota: Number(ipt_derrota.value)*0,
+            empate: Number(ipt_empate.value)*1,
+        }
+        div_mensagem.innerHTML += `O time terminou o campeonato com ${(time.vitoria) + (time.empate) + time.derrota} pontos!`
+    }
+</script>

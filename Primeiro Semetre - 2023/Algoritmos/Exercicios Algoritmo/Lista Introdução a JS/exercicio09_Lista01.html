@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 06 </title>
+</head>
+<body>
+    Nome do Aluno: <input type="text" id="input_nomeAluno">
+    <br>
+    Nota Prova Continuada: <input type="text" id="input_continuada">
+    <br>
+    Nota Prova Semestral: <input type="text" id="input_semestral">
+    
+    <button onclick="calculoMediaFinal()"> "Ver minha média final" </button>
+   
+
+</body>
+</html>
+
+<script>
+function calculoMediaFinal(){
+    var notaContinuada = input_continuada.value * 0.4;
+    var notaSemestral = input_semestral.value * 0.6;
+    var mediaFinal  = notaContinuada + notaSemestral / 2
+
+    alert(" A média de " +  input_nomeAluno.value + ", será de " + mediaFinal )
+}
+</script>

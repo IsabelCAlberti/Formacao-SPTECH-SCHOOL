@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 3. Refaça o programa anterior de tal forma que, antes de cada frase apareça um contador. Ex: Se a frase digitada foi “Boa Tarde” a página ficará assim: 
+   1. Boa tarde 
+   2. Boa tarde 
+   ... 
+   7. Boa tarde -->
+
+    <button onclick="frases()">Diga algo sobre a matéria de Algoritmos</button>
+    <input type="text" id="minha_frase">
+    <div id="div_frases"></div>
+
+</body>
+
+</html>
+<script>
+
+    function frases() {
+        var minhas_frases = minha_frase.value
+        var numero = 0;
+        var cont = 1;
+        while (numero <= 7) {
+
+            div_frases.innerHTML += cont + minhas_frases + "<br>";
+            cont += 1;
+            numero += 1;
+        }
+    }
+</script>

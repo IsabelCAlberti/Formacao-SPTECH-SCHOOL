@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 11. Crie um programa o qual: 
+
+a) Pergunte ao usuário o preço de um produto 
+
+b) Ao clicar em "Cadastrar", o preço fica cadastrado num lugar que o usuário não vê 
+
+c) Ao clicar em "Atualizar Estoque", deve aparecer um texto como este abaixo: 
+
+   Você tem X produtos cadastrados em estoque 
+
+   Seu estoque vale R$Y 
+
+Onde X é a quantidade de produtos cadastrados pelo usuário e Y é a soma de todos os valores, com 2 casas decimais.  -->
+
+    <label>Preço do Produto: </label><input type="text" id="ipt_preco" placeholder="preco do produto">
+    <button onclick="cadastrarProduto()">Cadastrar</button>
+
+    <button onclick="atualizarEstoque()">Atualizar Estoque</button>
+
+    <span id="span_mensagem"></span>
+</body>
+
+</html>
+
+<script>
+
+    var listaProdutos = [];
+
+    function cadastrarProduto() {
+        var precoProdutos = Number(ipt_preco.value);
+        listaProdutos.push(precoProdutos);
+        console.log("Produtos Inseridos", listaProdutos)
+    }
+
+    function atualizarEstoque() {
+        var totalPrecoProdutos = 0;
+        for (let contQtd = 0; contQtd < listaProdutos.length; contQtd++) {
+            console.log("contQtd:", contQtd, "\n length: ", listaProdutos.length)
+            totalPrecoProdutos += listaProdutos[contQtd]
+        }
+
+        console.log("totalPrecoProdutos:", totalPrecoProdutos)
+        span_mensagem.innerHTML = ` Você tem ${listaProdutos.length} produtos cadastrados em estoque <br> 
+        Seu estoque vale R$ ${totalPrecoProdutos}`
+    }
+</script>

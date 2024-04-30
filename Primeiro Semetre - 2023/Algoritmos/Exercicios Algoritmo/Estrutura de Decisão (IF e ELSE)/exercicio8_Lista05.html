@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DExercicio 08 - Lista 05</title>
+</head>
+
+<body>
+    <!-- 8. Crie um programa o qual: 
+
+a) Solicite a quantidade de homens e mulheres num elevador 
+
+b) Ao clicar num botão "Ligar elevador", 
+calcule o peso total no elevador, 
+considerando que um homem pesa em média 90kg 
+e uma mulher 70kg 
+
+c) Caso o peso seja menor que 500, 
+exiba uma frase na cor verde abaixo do botão 
+com a frase Elevador vai se mover, pois está com Xkg 
+
+d) Caso o peso seja a partir de 500, 
+exiba uma frase na cor vermelha abaixo do botão 
+com a frase Alguém precisa descer. Precisa perder Xkg para mover o elevador  -->
+
+    Quantidade de Homens no Elevador:
+    <input id="ipt_qtdHomens">
+    Quantidade de mulheres no Elevador:
+    <input id="ipt_qtdMulheres">
+
+    <button onclick=calculoPeso()> Ligar elevador </button>
+    <div id="div_mensagemFinal"></div>
+</body>
+
+</html>
+<script>
+    function calculoPeso() {
+        var pesoTotal = (ipt_qtdHomens.value * 90) + (ipt_qtdMulheres.value * 70);
+
+        if (pesoTotal < 500) {
+            div_mensagemFinal.innerHTML = `<p style = "color: green"> Elevador vai se mover, pois está com ${pesoTotal} </p>`
+        } else {
+            div_mensagemFinal.innerHTML = `<p style = "color: red"> Alguém precisa descer. Precisa perder ${pesoTotal} para mover o elevador  </p>`
+        }
+    }
+
+</script>

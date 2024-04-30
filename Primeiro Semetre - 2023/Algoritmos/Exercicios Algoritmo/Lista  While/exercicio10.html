@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 10. Crie um programa o qual: 
+
+    a) Solicite um intervalo crescente de valores numéricos  
+    
+    b) Ao clicar num botão "S2 Pares"... 
+    
+    c) Exiba, debaixo do botão, todos os números pares contidos no intervalo. -->
+    Intervalo que deseja iniciar:
+    <input id="ipt_intervalo_inicial"> <br><br>
+    Intervalo que deseja terminar:
+    <input id="ipt_intervalo_final"> <br><br>
+
+    <button onclick="btn_num_intervalos()">S2 Pares</button><br>
+    <span id="span_mensagem"></span>
+</body>
+
+</html>
+<script>
+    function btn_num_intervalos() {
+        span_mensagem.innerHTML = "";
+
+        var numero_inicial = Number(ipt_intervalo_inicial.value)
+        var numero_final = Number(ipt_intervalo_final.value)
+        var cont_intervalo = 0;
+
+        while ((numero_inicial >= cont_intervalo && cont_intervalo < numero_final)) {
+            if ((numero_final % 2 == 0 && numero_inicial % 2 == 0)) {
+                if (cont_intervalo % 2 == 0) {
+                    span_mensagem.innerHTML += `${cont_intervalo} <br>`
+                }
+            }
+            cont_intervalo++;
+        }
+
+    }
+</script>

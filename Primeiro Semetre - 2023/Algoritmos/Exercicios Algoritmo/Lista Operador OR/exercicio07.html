@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07 - Lista OR</title>
+</head>
+
+<body>
+    <!-- 7 Vamos melhorar o exercício anterior. Crie um programa o qual: 
+
+a) Tenha o seguinte texto no topo: Calculadora de cansaço aprimorada do aluno SPTech. 
+
+b) Tenha o texto "Meio de transporte" e uma input para o usuário inserir o meio de transporte dele, podendo ser: 
+
+ Ônibus /  Metrô  /  Carro  /  Bicicleta 
+
+c) Tenha um input de texto para o usuário digitar a distância da casa dele até a faculdade, com o texto "Distância da faculdade (KM)" ao lado. 
+
+d) Tenha o botão "Calcular cansaço" que ao clicar mostrar em um alerta o nível de cansaço do usuário. 
+
+
+
+
+
+f) Se a distância da faculdade for MAIOR que 10 KM: 
+
+SE o meio de transporte for "Carro" exiba um alert com a frase ("É ... um pouco cansado ..."); 
+
+SE o meio de transporte for "Metrô" OU "Ônibus" exiba um alert com a frase ("Bem cansado ..."). 
+
+SE o meio de transporte for "Bicicleta" exiba um alert com a frase ("Vish ... tá só o pó ...").  -->
+    <h1 style="display: flex; justify-content: center;">Calculadora de cansaço aprimorada do aluno SPTech</h1>
+
+    <h3> Meio de tranporte:</h3>
+    <b>(1)</b> - Ônibus <br>
+    <b>(2)</b> - Metrô <br>
+    <b>(3)</b> - Bicicleta <br>
+    <b>(4)</b> - Carro <br><br>
+    <input type="number" min="1" max="4" id="ipt_meio_transporte"></input><br><br>
+
+    <p>Distância da faculdade (KM): <input id="ipt_distancia_km"></input> </p>
+
+    <br><br><button onclick="calculo_cansaco()">Calcular Cansaço</button>
+
+</body>
+
+</html>
+<script>
+    function calculo_cansaco() {
+        var meio_transporte = Number(ipt_meio_transporte.value);
+        var distancia_km = Number(ipt_distancia_km.value);
+
+        if (distancia_km <= 10) {
+            if (meio_transporte == 4 || meio_transporte == 2 || meio_transporte == 1) {
+                alert("Tá tranks ...");
+            } else {
+                alert("É ... um pouco cansado ...");
+            }
+        } else if (distancia_km > 10) {
+            if (meio_transporte == 4) {
+                alert("É ... um pouco cansado ...");
+            } else if (meio_transporte == 2 || meio_transporte == 1) {
+                alert("Bem cansado ...");
+            } else {
+                alert("Vish ... tá só o pó ...");
+            }
+        }
+    }
+</script>

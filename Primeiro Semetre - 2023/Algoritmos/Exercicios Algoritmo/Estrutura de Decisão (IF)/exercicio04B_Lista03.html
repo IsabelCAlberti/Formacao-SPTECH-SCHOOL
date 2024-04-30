@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04 - Lista 04</title>
+</head>
+
+<body>
+<!-- 4a. Refaça a questão anterior de tal forma que:
+     a frase do item d) apareça na cor de letra azul e em itálico e negrito.  -->
+
+    Preço da Pizza escolhida: <input id="input_precoPizza">
+    Quantas pessoas vão dividir a pizza: <input id="input_qtdPessoas">
+
+    <button onclick="valorTotalPizza()"> Rola a pizza? </button>
+
+    <div id="div_exibicaoTexto"> </div>
+
+</body>
+
+</html>
+<script>
+    function valorTotalPizza() {
+        var precoPizza = Number(input_precoPizza.value);
+        var qtdPessoas = Number(input_qtdPessoas.value);
+        var valorPizzaPorAmigos = precoPizza / qtdPessoas;
+
+        var mensagemFinal = `Cada amigo vai pagar R$ ${valorPizzaPorAmigos} pela pizza`;
+
+        div_exibicaoTexto.innerHTML = mensagemFinal;
+
+        if (valorPizzaPorAmigos > 20) {
+            var text = "Deu ruim! Pizza muito cara!";
+            var textoColorido = text.fontcolor("blue");
+            div_exibicaoTexto.innerHTML += `<strong> <i> \n ${textoColorido} </strong> </i>` ;
+        }
+    }
+</script>

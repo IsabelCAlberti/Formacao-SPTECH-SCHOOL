@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03 - Lista OR</title>
+</head>
+<body>
+    <!-- 3. Crie um programa o qual ajudará o governo a saber se ele dará a ajuda emergencial ao Covid19 a um cidadão: 
+a) Solicite o valor da renda individual do usuário 
+b) Solicite o valor da renda familiar do usuário 
+c) Ao clicar em "Terei o benefício", podem aparecer as seguintes mensagens: 
+   "Você terá direito ao auxílio", caso 
+renda individual for até 2000 ou 
+caso a renda familiar for até 3000 
+
+   "Sem direito ao auxílio", caso contrário  -->
+
+Sua renda Individual:
+<input id="ipt_renda_individual">
+Sua renda Familiar:
+<input id="ipt_renda_familiar">
+
+<button onclick="verificar_beneficio()">Terei Benefício?</button>
+<div id="div_mensagem_final"></div>
+
+</body>
+</html>
+<script>
+    function verificar_beneficio(){
+        var renda_individual = Number(ipt_renda_individual.value);
+        var renda_familiar = Number(ipt_renda_familiar.value);
+        if (renda_individual <= 2000 || renda_familiar <= 3000) {
+            div_mensagem_final.innerHTML = `Você terá direito ao auxílio`;
+        } else {
+            div_mensagem_final.innerHTML = `Sem direito ao auxílio`;
+        }
+}
+</script>

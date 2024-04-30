@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio04 - Lista 02</title>
+</head>
+<body>
+
+
+Sabor da Pizza: <input id="input_saborPizza">
+Preço da Pizza escolhida: <input id="input_precoPizza">
+
+Quantas pessoas vão dividir a pizza: <input id="input_qtdPessoas">
+
+<button onclick="valorTotalPizza()"> Ver valor por amigo </button>
+
+<div id="div_exibicaoTexto"> </div>
+
+
+</body>
+</html>
+
+<script>
+    function valorTotalPizza (){
+      
+        var precoPizza = Number(input_precoPizza.value);
+        var qtdPessoas = Number(input_qtdPessoas.value);
+        
+        var porcentagemGarcom = (precoPizza * 10) /100;
+        var valorTotalPizza = porcentagemGarcom  + precoPizza;
+        var valorPizzaPorAmigos = valorTotalPizza / qtdPessoas;
+
+        var mensagemFinal = `Cada amigo vai colaborar com R$ ${valorPizzaPorAmigos} para a pizza de ${input_saborPizza.value}`;
+        
+        div_exibicaoTexto.innerHTML = mensagemFinal;
+    }
+</script>

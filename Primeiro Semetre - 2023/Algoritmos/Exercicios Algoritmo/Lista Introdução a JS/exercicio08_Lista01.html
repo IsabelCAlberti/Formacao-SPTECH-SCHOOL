@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 06 </title>
+</head>
+<body>
+    Nome do Guerreiro: <input type="text" id="input_nomeGuerreiro">
+    <br>
+    Força normal do KI: <input type="text" id="input_ki">
+
+    <button onclick="calculoKI()"> "Ver KI em cada forma" </button>
+   
+
+</body>
+</html>
+
+<script>
+function calculoKI(){
+    var nomeGuerreiro = input_nomeGuerreiro.value
+    var forcaKI = input_ki.value
+    var forcaSayajin2= input_ki.value * 100
+
+    alert(" Super Sayajin " +  nomeGuerreiro + ", KI esta em " + (forcaKI *50) )
+    alert("Super Sayajin 2 " + nomeGuerreiro + ", KI esta em " + forcaSayajin2)
+}
+</script>

@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(16, 155, 186);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5% ;
+  margin-bottom: 1%;
+  background-color: blueviolet;
+}
+
+input{
+    margin-top: 1% ;
+    margin-bottom: 1%;
+}

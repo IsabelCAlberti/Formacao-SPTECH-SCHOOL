@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 3. Crie um programa o qual: 
+
+a) Tenha um botão "jogar dado" 
+
+b) Ao clicar nele, sorteie um dos 6 números de um dado e mostre a figura do lado do dado que foi sorteada. -->
+
+<label> Jogue o dado: </label> <button onclick="sortearNumerosDados()">Jogar Dados</button>
+<span id="spanMensagem"></span>
+</body>
+</html>
+<script>
+
+    function sortearNumerosDados(){
+        var numMin = 1;
+        var numMax = 6
+
+        var intervalo = numMax-numMin;
+        var aleatorio = numMin + Math.random() * intervalo;
+        var arredondar = parseInt(aleatorio);
+
+console.log("intervalo", intervalo , "aleatorio", aleatorio, "arrendondar", arredondar)
+
+        var arrayFacesDados = [`<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjl89W4S5lj35TT0PJpWpFGmRLEqMSXybxhA&usqp=CAU">`, 
+                               `<img src="https://w7.pngwing.com/pngs/875/70/png-transparent-droide-others-angle-rectangle-dice.png>"`,
+                               `<img src="https://cdn-icons-png.flaticon.com/512/37/37561.png>"`,
+                               `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlG71lo6rmQ1RnLOwV7BN3P6Exqm6mUNsT5w&usqp=CAU">`,
+                               `<img src="https://w7.pngwing.com/pngs/36/187/png-transparent-dice-snakes-and-ladders-game-dice-game-white-text-thumbnail.png">`,
+                               `<img src="https://w7.pngwing.com/pngs/811/800/png-transparent-dice-game-dice-s-free-game-rectangle-presentation-thumbnail.png">`]
+        spanMensagem.innerHTML = `<br> ${arrayFacesDados[arredondar]}`
+    }
+</script>

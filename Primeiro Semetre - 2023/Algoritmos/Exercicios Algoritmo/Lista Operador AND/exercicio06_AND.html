@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    <!-- Crie um programa o qual: 
+
+a) Pergunte uma nota de um aluno 
+
+b) Pergunte a frequência de um aluno 
+
+c) Ao clicar em "Avaliar aluno"... 
+
+d) Caso a nota for a partir de 6 e a frequência for a partir de 75, exibir um alert com a frase "Parabéns! Aprovado!", 
+caso contrário, exibir um alert com "Infelizmente, não foi desta vez" -->
+
+Sua nota:
+    <input id="ipt_notaAluno">
+Sua Frequência:
+    <input id="ipt_frequenciaAluno">
+
+    <button onclick="validarNota()">Avaliar Aluno</button>
+
+</body>
+</html>
+<script>
+function validarNota() {
+    var nota = Number(ipt_notaAluno.value);
+    var frequencia = Number(ipt_frequenciaAluno.value);
+    if (nota >= 6 && frequencia >= 75) {
+        alert("Parabéns! Aprovado!");
+    }else{
+        alert("Infelizmente, não foi desta vez");
+    }
+}
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 20 - Lista For</title>
+</head>
+<body>
+    <!-- 20. Crie um programa no qual: 
+
+a) O usuário informa quantos depósitos ele fez no banco 
+
+b) O usuário informa o valor de cada depósito, pois ele sempre depositava exatamente o mesmo valor 
+
+c) Ao clicar em "Acompanhar grana", deve aparecer o valor, mês a mês, como neste exemplo 
+
+    1º Mês: R$ 500.00 
+
+    2º Mês: R$ 1000.00 
+    3º Mês: R$ 1500.00 
+    4º Mês: R$ 2000.00 
+    5º Mês: R$ 2500.00 
+    Total guardado: R$2500.00 
+
+No exemplo acima, o usuário informou 5 depósitos e 500 por depósito.  -->
+
+Quantos depósitos fez no banco?
+<br>
+<input id="ipt_deposito">
+<br>
+Qual valor do depósito?
+<br>
+<input id="ipt_valor_deposito">
+<br>
+<br>
+<button onclick="valor_mesAmes()">Acompanhar grana</button>
+<br>
+<span id="valor_mensagem"></span>
+</body>
+</html>
+<script>
+    function valor_mesAmes(){
+        var qtd_depositos = Number(ipt_deposito.value);
+        var valor_deposito_inicial = Number(ipt_valor_deposito.value);
+        var valor_deposito = Number(ipt_valor_deposito.value);
+        
+        for(var mes = 1; mes <= qtd_depositos; mes++ ){
+            valor_mensagem.innerHTML +=`${mes}º Mês: ${valor_deposito}<br>`;
+            valor_deposito = valor_deposito+ Number(ipt_valor_deposito.value);
+        }
+    }
+</script>

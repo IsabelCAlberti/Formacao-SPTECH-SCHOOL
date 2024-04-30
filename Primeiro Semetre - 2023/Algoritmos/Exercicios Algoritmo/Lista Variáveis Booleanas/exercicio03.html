@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 3. Crie um programa o qual: 
+
+OBS: Use variáveis booleanas 
+
+a) Solicite a nota e a frequência do aluno 
+
+b) Ao clicar em "Avaliar", exiba algumas dessas frases abaixo do botão (pode ser que mais de uma delas apareça. Nesse caso, mostre uma abaixo da outra): 
+
+    "Parabéns, aprovado(a)!" caso sua nota for a partir de 6 e sua frequência a partir de 75 
+    "Reprovado(a) por nota!" caso sua nota for menor que  6 
+    "Reprovado(a) por frequência!" caso sua frequência for menor que 75  -->
+
+    Nota 1: <input id="input_nota"> <br>
+    Frequência: <input id="input_freq"> <br>
+    <button onclick="analisar()">Avaliar</button>
+
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var nota = Number(input_nota.value);
+        var frequencia = Number(input_freq.value);
+
+        var validacao_nota_aprovado = nota >= 6;
+        var validacao_nota_reprovado = nota < 6;
+
+        var validacao_frequencia = frequencia < 75;
+
+        var validacao_aprovacao = validacao_frequencia && validacao_nota_aprovado;
+
+        if (validacao_aprovacao) { 
+            alert("Parabéns, aprovado!")
+        } 
+    
+    if(validacao_nota_reprovado) {
+            alert("Reprovado por nota!")
+        }
+        else {
+            alert("Reprovado por frequência!")
+        }
+
+    }
+</script>

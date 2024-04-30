@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09 - Lista 04</title>
+</head>
+
+<body>
+
+    Informe a ultima serie assitida: <input id="input_ultimaSerie">
+    Total de episodios assistidos: <input id="input_totalDeEpisodios">
+
+    <button onclick="calculoNivel()"> Verificar Nível </button>
+
+    <div id='div_mensagemFinal'></div>
+
+</body>
+
+</html>
+<script>
+    function calculoNivel() {
+        var totalEpisodios = Number(input_totalDeEpisodios.value);
+        var totalHorasAssistidos = Number((totalEpisodios * 22) / 60);
+
+        var mensagemFinal = `Vejo que você gosta da série ${input_ultimaSerie.value}`;
+        div_mensagemFinal.innerHTML = mensagemFinal;
+
+        if (totalHorasAssistidos > 30) {
+
+            div_mensagemFinal.innerHTML += "\nUau, você realmente gosta dessa série!";
+        }
+    }
+</script>

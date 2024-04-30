@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09 - Lista OR</title>
+</head>
+
+<body>
+    <!-- 9. George Quisito está pesquisando por uma nova TV de 40" porque suspeita que o governador de seu estado irá prorrogar a quarentena por mais 1 mês e sua TV atual é de 22" apenas. Porém, ele é desconfiado com preços muito baixos e, claro, possiu um teto, um limite máximo que está disposto a pagar. Assim, crie para ele um programa o qual: 
+
+a) Solicite a marca da TV (dentre as opções "Samsung", "LG", "Mondial" e "Britânia") 
+
+b) Solicite o preço da TV 
+
+c) Ao clicar em "Analisar compra", podem aparecer as seguintes mensagens na tela: 
+
+   c.1) "TV fora da faixa de preço", caso a TV custar menos que 800 ou mais que 2000 
+   c.2) "Na faixa de preço, porém marca não confiável", caso esteja na faixa entre 800 e 2000, porém for da "Mondial" ou "Britânia" 
+   c.3) Caso tenha exibido a mensagem de c.1), exiba também essa outra frase, caso custar menos de 800: "Preço baixo demais!". Ou, caso custar mais de 2000, exiba esta: "TV cara demais, infelizmente" 
+   c.4) Caso a TV esteja na faixa de preço e for da "LG" ou "Samsung", exiba "Essa TV pode entrar na sua lista!"  -->
+<strong>Marca da TV:<br><br></strong>
+    <b>(1)</b> - Samsung <br>
+    <b>(2)</b> - LG <br>
+    <b>(3)</b> - Mondial <br>
+    <b>(4)</b> - Britânia <br><br>
+<input type="number" id="ipt_marca_tv" min="1" max="4"><br>
+
+<br> <strong>Preço da TV:</strong>
+<input id="ipt_preco_tv" >
+
+<br> <button onclick="analisarCompra()"> Analisar Compra</button>
+<div id="div_mensagem_final"></div>
+</body>
+</html>
+<script>
+    function analisarCompra(){
+        var marca = Number(ipt_marca_tv.value);
+        var preco_tv = Number(ipt_preco_tv.value);
+        div_mensagem_final.innerHTML = "";
+
+        if (preco_tv < 800 || preco_tv > 2000) {
+            div_mensagem_final.innerHTML = "TV fora da faixa de preço.";
+            if (preco_tv < 800 ) {
+                div_mensagem_final.innerHTML += "\nPreço baixo demais!";
+            }else if(preco_tv > 2000){
+                div_mensagem_final.innerHTML +="\nTV cara demais, infelizmente" 
+            }
+        } else if(preco_tv >= 800 || preco_tv <= 2000 && marca == 3 || marca == 4) {
+            div_mensagem_final.innerHTML = "Na faixa de preço, porém marca não confiável.";
+        } else if(preco_tv >= 800 || preco_tv <= 2000 && marca == 2 || marca == 1){
+            div_mensagem_final.innerHTML ="Essa TV pode entrar na sua lista!";
+        }
+    }
+</script> 

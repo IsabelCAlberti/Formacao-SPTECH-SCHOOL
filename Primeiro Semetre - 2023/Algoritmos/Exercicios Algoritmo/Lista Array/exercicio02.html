@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 2. Crie um Programa o qual: 
+
+a) Tenha um campo "Destino de viagem" e um botão "Adicionar" 
+
+b) Ao clicar no botão, esse destino deve ser adicionado em algum lugar o qual o usuário não vê. Não existe problema em serem registrados valores repetidos 
+
+c) Deve haver os botões: 
+
+  "Primeira viagem" - Ao clicar nele, aparece abaixo o primeiro local cadastrado ou "ainda não viajou", caso nenhuma viagem tenha sido registrada 
+
+  "Terceira viagem" - Ao clicar nele, aparece abaixo o 3º local cadastrado ou "ainda fez a 3ª viagem", caso não tenha feito 3 viagens ainda 
+
+  "Última viagem" - Ao clicar nele, aparece abaixo o último local cadastrado ou "ainda não viajou", caso nenhuma viagem tenha sido registrada 
+
+OBS: Obtenha esses três valores SOMENTE do vetor que criar  -->
+
+    <input type="text" placeholder="Destino de Viagem" id="ipt_destino_viagem">
+
+    <button onclick="registrar()">Adicionar</button>
+    <br>
+    <br>
+    <button onclick="mostrarPrimeira()">Primeira Viagem</button>
+    <button onclick="mostrarTerceira()">Terceira Viagem</button>
+    <button onclick="mostrarUltima()">Última Viagem</button>
+    <br>
+    <span id="span_vazia"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    var listaDestinos = [];
+
+    function registrar() {
+        var destinoUsuario = ipt_destino_viagem.value;
+        listaDestinos.push(destinoUsuario)
+        console.log(listaDestinos)
+    }
+
+    function mostrarPrimeira() {
+        if (listaDestinos.length == 0) {
+            span_vazia.innerHTML = "Ainda não viajou";
+        } else {
+            span_vazia.innerHTML = listaDestinos[0]
+        }
+    }
+
+    function mostrarTerceira() {
+        if (listaDestinos.length < 3) {
+            span_vazia.innerHTML = "Ainda não fez sua 3ª viagem";
+        } else {
+            span_vazia.innerHTML = listaDestinos[2]
+        }
+    }
+
+    function mostrarUltima() {
+        if (listaDestinos.length == 0) {
+            span_vazia.innerHTML = "Ainda não viajou";
+        } else {
+            span_vazia.innerHTML = listaDestinos[listaDestinos.length - 1]
+            // span_vazia.innerHTML = listaDestinos.slice(length-1)
+        }
+    }
+
+
+</script>

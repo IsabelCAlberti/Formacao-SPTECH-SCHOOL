@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01 - Lista 02</title>
+</head>
+<body>
+Horas de sono dormidas: <input type="text" id="input_horasSono">
+
+<button onclick="calculoSono()"> Calcular Sono </button>
+
+<div id="exibicaoHorasDormidas">
+
+</div>
+
+
+</body>
+</html>
+
+<script>
+        
+    function calculoSono(){
+        var qtdHorasSono = Number(input_horasSono.value);
+
+        var primeiraFase = (qtdHorasSono * 5) / 100 ;
+        var segundaFase = (qtdHorasSono * 45) /100;
+        var terceiraFase = (qtdHorasSono * 30) / 100;
+        var sonoRem = (qtdHorasSono* 20) /100;
+
+        var exibicaoFraseFinal = `Ao dormir <u> ${qtdHorasSono} </u> horas você dormiu: 
+        <br> <u> Fase 1 </u> cerca de ${primeiraFase} horas
+        <br> <u> Fase 2 </u> cerca de <strong> ${segundaFase} </strong> horas
+        <br> <u> Fase 3 </u> cerca de <strong> ${terceiraFase} </strong> horas
+        <br> <u> Fase 4 </u> cerca de <strong> ${sonoRem} </strong> horas `;
+
+    exibicaoHorasDormidas.innerHTML = exibicaoFraseFinal;
+}
+
+</script>

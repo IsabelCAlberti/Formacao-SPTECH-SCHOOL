@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantidade de Macarons que deseja:
+    <input id="ipt_macarons">
+    <br>
+    Preço da unidade de Macarons:
+    <input id="ipt_preco_macarons">
+    <br>
+    <br>
+    Quantidade de Brigadeiros Gourmets que deseja:
+    <input id="ipt_brigadeiros">
+    <br>
+    Preço da unidade de Brigadeiros Gourmets:
+    <input id="ipt_preco_brigadeiros">
+    <br>
+    <br>
+    Quantidade de Cupcakes que deseja:
+    <input id="ipt_cupcakes">
+    <br>
+    Preço da unidade de Cupcakes:
+    <input id="ipt_preco_cupcakes">
+    <br>
+    <br>
+    Quantidade de Cheesecakes que deseja:
+    <input id="ipt_cheesecakes">
+    <br>
+    Preço da unidade de Cheesecakes:
+    <input id="ipt_preco_cheesecakes">
+    <br>
+    <br>
+
+    <button onclick="verificar_vendas()">Verificar Vendas</button>
+    <br>
+    <br>
+    <div id="div_vazia"></div>
+
+</body>
+
+</html>
+<script>
+
+    function verificar_vendas() {
+      
+        var qtd_macarons = Number(ipt_macarons.value)
+        var qtd_brigadeiros = Number(ipt_brigadeiros.value)
+        var qtd_cupcakes = Number(ipt_cupcakes.value)
+        var qtd_cheesecakes = Number(ipt_cheesecakes.value)
+        var preco_macarons = Number(ipt_preco_macarons.value)
+        var preco_brigadeiros = Number(ipt_preco_brigadeiros.value)
+        var preco_cupcakes = Number(ipt_preco_cupcakes.value)
+        var preco_cheesecakes = Number(ipt_preco_cheesecakes.value)
+
+        var valid_qtd_doces = (qtd_macarons != "" && qtd_brigadeiros != "" && qtd_cheesecakes != "" && qtd_cupcakes != "");
+        var valid_preco_doces = (preco_macarons != "" && preco_brigadeiros != "" && preco_cheesecakes != "" && preco_cupcakes != "");
+
+        var valid_negativo_qtd_doces = (qtd_macarons >= 0 && qtd_brigadeiros >= 0 && qtd_cheesecakes >= 0 && qtd_cupcakes >= 0)
+        var valid_negativo_preco_doces = (preco_macarons >= 0 && preco_brigadeiros >= 0 && preco_cheesecakes >= 0 && preco_cupcakes >= 0);
+        
+        div_vazia.innerHTML ="";
+
+
+        if (valid_qtd_doces && valid_preco_doces) {
+            if (valid_negativo_qtd_doces && valid_negativo_preco_doces) {
+
+                for (var cont_vendas_macarons = 1; cont_vendas_macarons <= qtd_macarons; cont_vendas_macarons++) {                   
+                        div_vazia.innerHTML += `VENDA ${cont_vendas_macarons}  <img src= https://1.bp.blogspot.com/-RdRR4wF9cAk/YUuMEhCAGcI/AAAAAAAA4Nc/gK87pwiesysF5_vzYzF_pJ_VcN8wmdx3gCLcBGAsYHQ/s2048/MACARONS-1.jpg width="70px height="70px"> R$ ${preco_macarons}<br>`
+                                    }
+
+                for (var cont_vendas_brigadeiro = 1; cont_vendas_brigadeiro <= qtd_brigadeiros; cont_vendas_brigadeiro++) {
+                    div_vazia.innerHTML += `VENDA ${cont_vendas_brigadeiro}  <img src= https://harald.com.br/wp-content/uploads/2020/04/BriadeiroGormet_Melken_700x520.jpg width="70px" height="70px"> R$ ${preco_brigadeiros}<br>`
+                }
+
+                for (var cont_vendas_cupcake = 1; cont_vendas_cupcake <= qtd_cupcakes; cont_vendas_cupcake++) {
+                    div_vazia.innerHTML += `VENDA ${cont_vendas_cupcake}  <img src= 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 width="70px height="70px"> R$ ${preco_cupcakes}<br>`
+                }
+
+                for (var cont_vendas_cheesecake = 1; cont_vendas_cheesecake <= qtd_cheesecakes; cont_vendas_cheesecake++) {
+                    div_vazia.innerHTML += `VENDA ${cont_vendas_cheesecake}  <img src= https://www.receitasagora.com.br/wp-content/uploads/2020/09/receita-de-cheesecake-de-goiabada.jpg width="70px height="70px"> R$ ${preco_cheesecakes}<br>`
+                }
+
+            } else {
+                alert("Os valores não podem ser menor que 0!")
+            }
+        } else {
+            alert("Por favor preencha todos os dados!")
+        }
+
+        var qtd_total_de_doces = (qtd_brigadeiros + qtd_cupcakes + qtd_cheesecakes + qtd_macarons);
+        var valor_total_vendas = (preco_brigadeiros + preco_cheesecakes + preco_cupcakes + preco_macarons)*qtd_total_de_doces;
+
+        div_vazia.innerHTML += `<b><br>Com a quantidade de <span style= "color: red;"><b>${qtd_macarons} Macarons, </span> <span style= "color: blue;"> ${qtd_brigadeiros} Brigadeiros,</span> <span style= "color: green;">${qtd_cupcakes} Cupcakes </span>  e <span style= "color: yellow;">${qtd_cheesecakes} Cheesecakes,</span> a venda totalizará R$ ${valor_total_vendas}</b>`
+    }
+</script>

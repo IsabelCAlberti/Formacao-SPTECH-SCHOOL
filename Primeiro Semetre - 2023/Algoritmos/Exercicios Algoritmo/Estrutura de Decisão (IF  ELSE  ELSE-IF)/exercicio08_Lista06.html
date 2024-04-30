@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08 - Lista 06</title>
+</head>
+<body>
+    <!-- 8. Uma nutricionista e precisa ajudar seus pacientes a não engordarem tanto na quarentena do Covid19. 
+    Ajude ela criando um programa o qual: 
+
+a) Pergunte quantos pães franceses o usuário tem comido por dia -->
+Quantos pães franceses você come por dia?
+<input id="ipt_qtdPaes">
+
+<!-- b) Pergunte quantos pacotes de bolacha recheada o usuário tem comido por dia  -->
+Quantos pacotes de bolacha recheada tem comido por dia?
+<input id="ipt_qtdBolachas">
+<!-- c) Pergunte quantos copos de achocolatado o usuário tem tomado por dia  -->
+Quantos copos de achocolatado tem tomado por dia?
+<input id="ipt_qtdAchocolatado">
+
+<!-- d) Ao clicar em "Verificar calorias", 
+    calcule quantas calorias o usuário tem consumido com base nas 3 informações. Considere que um pão francês tem 50 calorias, um pacote de bolacha, 80 e um copo de achocolatado, 70.  -->
+<button onclick="verificarCalorias()">Verificar Calorias</button>
+<div id="div_mensagemFinal"></div>
+<!-- e) Após fazer o cálculo, exiba uma dessas frases, abaixo do botão: 
+   "Parabéns, vai sair em forma da quarentena!", caso as calorias sejam menores do que 200. 
+   "Cuidado, vai ficar mais "fofinho(a)" após quarentena!", caso as calorias sejam entre 200 e 400. 
+   "Bom, acho que muitos não vão te reconhecer após a quarentena", caso as calorias sejam mais de 400.  -->
+</body>
+</html>
+<script>
+function verificarCalorias(){
+    var qtdPao = Number(ipt_qtdPaes.value);
+    var qtdBolachas = Number(ipt_qtdBolachas.value);
+    var qtdAchocolatado = Number(ipt_qtdAchocolatado.value);
+    var calorias = (qtdPao*50) + (qtdAchocolatado*70)+(qtdBolachas*80);
+    if(calorias <200 ){
+        div_mensagemFinal.innerHTML = "Parabéns, vai sair em forma da quarentena!"
+    } else if(calorias<=400 ){
+        div_mensagemFinal.innerHTML = "Cuidado, vai ficar mais fofinho(a)" 
+    } else{
+        div_mensagemFinal.innerHTML = "Bom, acho que muitos não vão te reconhecer após a quarentena" 
+    }
+}
+</script>

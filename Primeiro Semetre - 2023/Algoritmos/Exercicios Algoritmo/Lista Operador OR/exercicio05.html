@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06 - Lista OR</title>
+</head>
+
+<body>
+    <!-- 5. Considere que a temperatura confortável para o ser humano é entre 21 e 24 graus. 
+        Crie então um sistema de alerta que apenas avisa se a temperatura está desconfortável e qual a consequência desse desconforto. 
+        Nesse programa, se a temperatura estiver confortável, simplesmente nenhum aviso é emitido.  
+
+    a) Pergunte a temperatura atual 
+    
+    b) Ao clicar em "Analisar clima", 
+    apenas se a temperatura não for confortável, exiba um alert com a frase "Alerta de desconforto!" e, depois, uma das frases a seguir, também em alerts: 
+    
+      b.1) "As pessoas vão ter hipotermia", caso a temperatura seja menor que o limite inferior da zona de conforto 
+    
+      b.2) "As pessoas vão derreter", caso a temperatura seja maior que o limite superior da zona de conforto 
+    
+    c) Lembrando que, em caso de temperatura confortável, simplesmente nada acontece  -->
+
+    Temperatura Atual:
+    <input id="ipt_temp_atual">
+
+    <button onclick="analisar_clima()">Analisar Clima</button>
+
+</body>
+
+</html>
+<script>
+    function analisar_clima() {
+        var temp_atual = Number(ipt_temp_atual.value);
+        if (temp_atual < 21 || temp_atual > 24) {
+            alert("Alerta de desconforto!");
+
+            if (temp_atual < 21) {
+                alert("As pessoas vão ter hipotermia");
+            } else {
+                alert("As pessoas vão derreter");
+            }
+        }
+    }
+</script>

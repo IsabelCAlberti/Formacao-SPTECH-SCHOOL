@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02 - Lista 02</title>
+</head>
+<body>
+    Quantidade de votos do Candidato A: <input id="input_votosA"> <br><br>
+    Quantidade de votos do Candidato B: <input id="input_votosB" > <br><br>
+    Quantidade de votos Nulos: <input id="input_votosNulos"> <br><br>
+    Quantidade de votos Brancos: <input id="input_votosBrancos"> <br><br>
+
+    <button onclick="totalDeVotos()"> Resultado da Eleição </button>
+
+    <div id="div_exibirTextoFinal"></div>
+
+</body>
+</html>
+
+<script>
+
+function totalDeVotos(){
+   var somaDosVotos = Number(input_votosA.value) + Number(input_votosB.value) + Number(input_votosNulos.value) + Number(input_votosBrancos.value);
+   var somaVotosInvalidos = Number(input_votosBrancos.value) + Number(input_votosNulos.value);
+
+   var votosCandA = input_votosA.value;
+   var votosCandB = input_votosB.value;
+   var votosNulos = input_votosNulos.value;
+   var votosBrancos = input_votosBrancos.value;
+
+   var porcVotosCandA = (votosCandA * 100 )/somaDosVotos;
+   var porcVotosCandB = (votosCandB * 100 )/somaDosVotos;
+   var porcVotosInvalidos = (somaVotosInvalidos * 100) / somaDosVotos;
+   
+var textoFinal = 
+`Total de votos <u> ${somaDosVotos} </u> . 
+        <br> Candidato A: ${porcVotosCandA} % (${votosCandA} votos)
+        <br> Candidato B: ${porcVotosCandB} % (${votosCandB} votos)
+        <br> Inválidos: ${porcVotosInvalidos} % (${somaVotosInvalidos} votos) `;
+
+        div_exibirTextoFinal.innerHTML = textoFinal;
+}
+
+</script>

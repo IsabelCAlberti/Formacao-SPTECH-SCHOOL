@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 01 - Lista 05 </title>
+</head>
+
+<body>
+
+    <!-- 1. Criar um programa que auxilie uma Autoescola a identificar possíveis novos alunos. 
+
+a) Solicite o nome e a idade de uma pessoa; 
+b) Ao clicar no botão "Avaliar aluno", 
+se a pessoa tiver 18 anos ou mais emita a mensagem "FULANO vamos tirar a CNH?", 
+caso contrário emita a mensagem "FULANO vai jogar PlayStation!";  -->
+
+
+    Nome:
+    <input id="ipt_nome">
+    Idade:
+    <input id="ipt_idade">
+
+    <button onclick="avaliarAluno()"> "Avaliar Aluno" </button>
+    <p id="p_mensagemFinal"></p>
+
+</body>
+
+</html>
+<script>
+function avaliarAluno(){
+    var idade = Number(ipt_idade.value);
+    if ( idade >= 18) {
+        p_mensagemFinal.innerHTML = `${ipt_nome.value} vamos tirar a CNH?`
+    } else {
+        p_mensagemFinal.innerHTML= `${ipt_nome.value} vai jogar PlayStation!`
+    }
+}
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05 - Lista 05</title>
+</head>
+<body>
+    <!-- 5. Crie um programa o qual: 
+
+a) Solicite 2 notas de um aluno 
+
+b) Ao clicar em "Verificar situação", calcule sua média e... 
+
+c) Caso a média seja a partir de 6, exiba "Parabéns, aprovado!" 
+
+d) Caso a média seja menor que 6, exiba "Tente outra vez..."  -->
+
+Nota 01:
+<input id="ipt_nota01">
+Nota 02:
+<input id="ipt_nota02">
+
+<button onclick="calculoMedia()">Verificar Situação</button>
+</body>
+</html>
+<script>
+    function calculoMedia(){
+        var nota01 = Number(ipt_nota01.value);
+        var nota02 = Number(ipt_nota02.value);
+        var calculoMedia = (nota01 + nota02) / 2
+        if (calculoMedia >= 6) {
+            alert("Parabéns, aprovado!")
+        } else {
+            alert("Tente outra vez...")
+        }
+    }
+</script>
