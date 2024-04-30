@@ -1,2 +1,3 @@
 # Formacao-SPTECH-SCHOOL
-Formação em ANÁLISE E DESENVOLVIMENTO DE SISTEMAS pela SPTECH SCHOOL
+Exercicios e Estudos do curso de Análise e Desenvolvimento de Sistemas da SPTECH SCHOOL
+
